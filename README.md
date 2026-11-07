@@ -22,4 +22,4 @@ npx skills add mhsFlairs/hkills --skill architecture-visualization
 
 - `comparative-research-analysis` — evidence-grounded comparisons, capability/readiness mapping, gap analysis, prioritization, and cautious timeline estimates.
 - `branded-report-builder` — clear, brand-aligned reports, including synchronized Markdown and HTML deliverables.
-- `architecture-visualization` — evidence-aware architecture diagrams and visual briefings, including offline interactive canvases.
+- `architecture-visualization` — evidence-aware architecture diagrams and visual briefings, including offline interactive canvases with compact agents, shared-service references, hash navigation and zoom.

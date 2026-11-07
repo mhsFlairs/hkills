@@ -1,14 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Architecture canvas starter — replace example content</title>
-<style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Architecture canvas starter</title><style>
 *{box-sizing:border-box}html{min-height:100%;overflow:auto}body{margin:0;background:#eef1f7;color:#18213b;font-family:Inter,"Segoe UI",Arial,sans-serif}main{width:max-content;min-width:100%;padding:36px 40px 54px}article{width:var(--diagram-width, 1770px);margin:0 auto;background:#fff;border:1px solid #dce2ee;box-shadow:0 18px 55px #21355912;border-radius:20px;overflow:hidden}svg{display:block;width:100%;height:auto}.zoom-controls{position:fixed;right:24px;bottom:24px;z-index:10;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid #dce2ee;border-radius:14px;background:rgba(255,255,255,.96);box-shadow:0 8px 28px #24345b24;backdrop-filter:blur(8px)}.zoom-controls button{min-width:38px;height:38px;border:0;border-radius:9px;background:transparent;color:#263451;font:600 21px Inter,"Segoe UI",Arial,sans-serif;cursor:pointer}.zoom-controls button:hover{background:#f0efff;color:#5d55d6}.zoom-controls button:focus-visible{outline:2px solid #7067e8;outline-offset:2px}.zoom-controls button:disabled{opacity:.35;cursor:default}.zoom-controls .zoom-value{min-width:60px;padding:0 7px;font-size:13px;font-weight:700}.zoom-controls .zoom-value:hover{background:#f0efff}@keyframes travel{to{stroke-dashoffset:-32}}.animated-flow{stroke-dasharray:9 7;animation:travel 1.4s linear infinite}.animated-trunk{stroke-dasharray:5 8;animation:travel 2.2s linear infinite}@media (prefers-reduced-motion:reduce){.animated-flow,.animated-trunk{animation:none;stroke-dasharray:none}}@media print{.zoom-controls{display:none}.animated-flow,.animated-trunk{animation:none;stroke-dasharray:none}@page{size:A3 landscape;margin:7mm}body{background:white}main{width:auto;min-width:0;padding:0}article{width:auto;border:none;box-shadow:none;border-radius:0}svg{max-height:96vh}}
+
+[hidden]{display:none}.view-tab{cursor:pointer}.tabtext{font-size:13px;font-weight:700;fill:#8993a8}.view-tab[data-active="true"] rect{fill:#eeedff}.view-tab[data-active="true"] text{fill:#625ad7}.view-tab:focus-visible rect{stroke:#655ce8;stroke-width:3}
 </style></head><body><main><article>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2150 1020" role="img" aria-labelledby="title description">
-<title id="title">Example architecture canvas</title>
-<desc id="description">Example architecture diagram. All example components and flows must be replaced with verified information.</desc>
+<svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 940" role="group" aria-labelledby="title description"><title id="title">Fictional architecture example</title><desc id="description">Three editable example views demonstrate a flow, a connected consumer, and compact parallel agents. Replace these synthetic examples with verified facts.</desc>
 <defs>
   <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#dce4f3"/></pattern>
   <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#746af5"/><stop offset="1" stop-color="#574ed3"/></linearGradient>
@@ -19,107 +14,165 @@
   text{font-family:Inter,'Segoe UI',Arial,sans-serif}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;fill:#6961dd}.title{font-size:39px;font-weight:750;letter-spacing:-1.4px;fill:#18213b}.subtitle{font-size:15px;fill:#738099}.smallcaps{font-size:11px;font-weight:800;letter-spacing:1.6px;fill:#8a95a9}.section{font-size:15px;font-weight:750;fill:#26324d}.cardtitle{font-size:18px;font-weight:700;fill:#25324d}.body{font-size:14px;fill:#6e7c94}.tiny{font-size:12px;fill:#8895aa}.tag{font-size:11px;font-weight:750;fill:#645cda;letter-spacing:.6px}.num{font-size:12px;font-weight:750;fill:#7771dc}.node{fill:#fff;stroke:#e2e8f1;stroke-width:1.3}.line{stroke:#c0cadb;stroke-width:2.2;fill:none}.flow{stroke:#7168e9;stroke-width:2.6;fill:none;marker-end:url(#arrow)}
   </style>
 </defs>
-<!-- Header -->
-<rect width="2150" height="1020" fill="#ffffff"/>
-<text x="70" y="69" class="eyebrow">ARCHITECTURE CANVAS  /  EXAMPLE</text>
-<text x="70" y="122" class="title">From sources to usable knowledge</text>
-<text x="70" y="153" class="subtitle">Illustrative starter: replace all labels and flows with verified information.</text>
-<text x="2003" y="69" style="font-size:25px;font-weight:800;letter-spacing:-2px;fill:#283455"><tspan fill="#6a60e9">EXAMPLE</tspan></text>
-<rect x="1730" y="112" width="126" height="35" rx="17.5" fill="#efeeff"/><text x="1752" y="134" style="font-size:13px;font-weight:750;fill:#625ad7">Product A</text>
-<rect x="1865" y="112" width="70" height="35" rx="17.5" fill="#f2f4f8"/><text x="1888" y="134" style="font-size:13px;font-weight:700;fill:#8d97a9">B</text>
-<rect x="1944" y="112" width="95" height="35" rx="17.5" fill="#f2f4f8"/><text x="1969" y="134" style="font-size:13px;font-weight:700;fill:#8d97a9">Product C</text>
-<line x1="70" y1="184" x2="2080" y2="184" stroke="#e8ecf3"/>
-<!-- Background canvas -->
-<rect x="40" y="212" width="2070" height="665" rx="21" fill="#f8faff"/><rect x="40" y="212" width="2070" height="665" rx="21" fill="url(#dots)" opacity=".65"/>
-<!-- column headings -->
-<text x="76" y="257" class="smallcaps">01  /  SOURCE SYSTEMS</text><text x="605" y="257" class="smallcaps">02  /  INGESTION</text><text x="1144" y="257" class="smallcaps">03  /  INTELLIGENT PROCESSING</text><text x="1702" y="257" class="smallcaps">04  /  KNOWLEDGE STORAGE</text>
-<text x="76" y="283" class="section">Knowledge sources</text><text x="605" y="283" class="section">Shared ingestion pipeline</text><text x="1144" y="283" class="section">Turning content into knowledge</text><text x="1702" y="283" class="section">Purpose-built stores</text>
-<!-- four source cards -->
-<g filter="url(#shadow)">
-<rect x="75" y="314" width="390" height="98" rx="15" class="node"/>
-<rect x="75" y="430" width="390" height="98" rx="15" class="node"/>
-<rect x="75" y="546" width="390" height="98" rx="15" class="node"/>
-<rect x="75" y="662" width="390" height="126" rx="15" class="node"/>
+<rect id="page-bg" width="2000" height="940" fill="#fff"/>
+<text x="70" y="69" class="eyebrow">ARCHITECTURE CANVAS / FICTIONAL EXAMPLE</text>
+<text id="canvas-title" x="70" y="122" class="title">From sources to usable data</text>
+<text id="canvas-subtitle" x="70" y="153" class="subtitle">An editable visual pattern; all components and connections are examples.</text>
+<g id="header-right">
+<text x="1860" y="69" class="tag" style="font-size:20px">EXAMPLE</text>
+<g class="view-tab" data-view-button="overview" role="button" tabindex="0" aria-label="Show Overview example" aria-pressed="false"><rect x="1530" y="112" width="110" height="35" rx="17.5" fill="#f2f4f8"/><text x="1547" y="134" class="tabtext">Overview</text></g>
+<g class="view-tab" data-view-button="application" role="button" tabindex="0" aria-label="Show Application example" aria-pressed="false"><rect x="1650" y="112" width="120" height="35" rx="17.5" fill="#f2f4f8"/><text x="1667" y="134" class="tabtext">Application</text></g>
+<g class="view-tab" data-view-button="analysis" role="button" tabindex="0" aria-label="Show Analysis example" aria-pressed="false"><rect x="1780" y="112" width="110" height="35" rx="17.5" fill="#f2f4f8"/><text x="1797" y="134" class="tabtext">Analysis</text></g>
+</g><line id="header-divider" x1="70" y1="184" x2="1930" y2="184" stroke="#e8ecf3"/>
+<rect id="canvas-bg" x="40" y="212" width="1920" height="630" rx="21" fill="#f8faff"/><rect id="canvas-dots" x="40" y="212" width="1920" height="630" rx="21" fill="url(#dots)" opacity=".6"/>
+<g id="scene-overview">
+<text x="75" y="257" class="smallcaps">01 / SOURCES</text>
+<text x="75" y="283" class="section">Example source systems</text>
+<text x="470" y="257" class="smallcaps">02 / INTAKE</text>
+<text x="470" y="283" class="section">Collect the input</text>
+<text x="870" y="257" class="smallcaps">03 / PROCESSING</text>
+<text x="870" y="283" class="section">Prepare the data</text>
+<text x="1350" y="257" class="smallcaps">04 / DATA</text>
+<text x="1350" y="283" class="section">Available information</text>
+<rect x="440" y="300" width="1390" height="440" rx="22" fill="none" stroke="#b8c5e3" stroke-dasharray="7 7"/>
+<text x="1460" y="324" class="tag">ILLUSTRATIVE SERVICE AREA</text>
+<rect x="75" y="370" width="300" height="160" rx="18" class="node" filter="url(#shadow)"/>
+<text x="100" y="408" class="cardtitle" style="font-size:20px">Source systems</text>
+<text x="100" y="447" class="body">Platform A · Platform B</text>
+<text x="100" y="477" class="body">Documents · direct input</text>
+<text x="100" y="506" class="tiny">Replace with actual sources</text>
+<rect x="470" y="370" width="300" height="160" rx="18" class="node" filter="url(#shadow)"/>
+<text x="495" y="408" class="cardtitle" style="font-size:20px">Ingestion</text>
+<text x="495" y="447" class="body">Example intake pipeline</text>
+<text x="495" y="477" class="body">Source and record context</text>
+<rect x="870" y="370" width="350" height="160" rx="18" class="node" filter="url(#shadow)"/>
+<text x="895" y="408" class="cardtitle" style="font-size:20px">Processing</text>
+<text x="895" y="447" class="body">Example transformation</text>
+<text x="895" y="477" class="body">Use verified ordering</text>
+<rect x="1125" y="388" width="68" height="23" rx="11.5" fill="#eeedff"/><text x="1136" y="404" class="tag" style="font-size:10px">via P1</text>
+<rect x="1350" y="370" width="450" height="160" rx="18" class="node" filter="url(#shadow)"/>
+<text x="1375" y="408" class="cardtitle" style="font-size:20px">Data store</text>
+<text x="1375" y="447" class="body">Logical data made available</text>
+<text x="1375" y="477" class="body">Engine and access path are examples</text>
+<path d="M375 450 H470" class="flow animated-flow"/>
+<path d="M770 450 H870" class="flow animated-flow"/>
+<path d="M1220 450 H1350" class="flow animated-flow"/>
+<rect x="870" y="590" width="350" height="110" rx="18" fill="#f2f1ff" stroke="#dcd9f3" filter="url(#shadow)"/>
+<text x="895" y="619" class="tag">SHARED DEPENDENCY / P1</text>
+<text x="895" y="651" class="cardtitle" style="font-size:18px">Example model gateway</text>
+<text x="895" y="679" class="tiny">Fictional shared-service reference</text>
 </g>
-<rect x="94" y="337" width="47" height="47" rx="13" fill="#eeedff"/><path d="M106 349h23v18h-23z M106 355h23 M113 349v18" fill="none" stroke="#6c63df" stroke-width="1.8" stroke-linejoin="round"/>
-<text x="159" y="354" class="cardtitle">Ticket platforms</text><text x="159" y="379" class="body">Support system A · Support system B</text>
-<rect x="94" y="453" width="47" height="47" rx="13" fill="#eeedff"/><path d="M107 463h16l5 5v21h-21z M123 463v6h5 M112 475h11 M112 480h11" fill="none" stroke="#6c63df" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="159" y="470" class="cardtitle">Documentation</text><text x="159" y="495" class="body">Documentation platform A · B</text>
-<rect x="94" y="569" width="47" height="47" rx="13" fill="#eeedff"/><circle cx="117.5" cy="592.5" r="12" fill="none" stroke="#6c63df" stroke-width="1.7"/><path d="M106 592h23 M118 581c-5 5-5 18 0 23 M118 581c5 5 5 18 0 23" fill="none" stroke="#6c63df" stroke-width="1.5"/>
-<text x="159" y="586" class="cardtitle">Public web &amp; help desks</text><text x="159" y="611" class="body">Scraped content</text>
-<rect x="94" y="685" width="47" height="47" rx="13" fill="#eeedff"/><path d="M108 714h19 M117.5 694v16 M112 699l5.5-5 5.5 5" fill="none" stroke="#6c63df" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="159" y="702" class="cardtitle">Direct ingestion</text><text x="159" y="727" class="body">Example upload interface</text><text x="159" y="752" class="tiny">Replace with an approved source</text>
-<!-- All source types converge at the shared pipeline. -->
-<path d="M465 363 H520 M465 479 H520 M465 595 H520 M465 725 H520 M520 363 V725" class="line animated-trunk"/><circle cx="520" cy="405" r="5" fill="#7168e9"/><path d="M520 405 H580" class="flow animated-flow"/>
-<!-- Independent pipeline and PII cards. -->
-<rect x="580" y="318" width="483" height="163" rx="18" fill="#fff" stroke="#dfe4f1" stroke-width="1.5" filter="url(#shadow)"/>
-<rect x="612" y="348" width="56" height="56" rx="16" fill="url(#violet)"/><path d="M626 364h28 M626 376h28 M626 388h28" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="633" cy="364" r="3" fill="#bfbaff"/><circle cx="646" cy="376" r="3" fill="#bfbaff"/><circle cx="637" cy="388" r="3" fill="#bfbaff"/>
-<text x="687" y="368" class="tag">DATA INGESTION</text><text x="687" y="396" class="cardtitle" style="font-size:21px">Ingestion pipelines</text>
-<text x="612" y="441" class="body">Example ingestion; replace with verified details.</text>
-<path d="M821 481 V538" class="flow animated-flow"/>
-<rect x="580" y="538" width="483" height="197" rx="18" fill="url(#mint)" stroke="#cdebe2" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="612" y="563" width="46" height="46" rx="14" fill="#d8f2e9"/><path d="M635 573l10 4v7c0 6-4 10-10 13-6-3-10-7-10-13v-7z" fill="none" stroke="#2b9c80" stroke-width="2" stroke-linejoin="round"/>
-<text x="676" y="582" style="font-size:12px;font-weight:800;letter-spacing:1.3px;fill:#278b74">DATA PROCESSING</text><text x="676" y="609" class="cardtitle" style="font-size:21px">PII layer</text>
-<line x1="612" y1="634" x2="1031" y2="634" stroke="#d1ebe3"/><text x="612" y="662" class="body">Example handling; verify applicability</text><text x="612" y="695" class="tiny">Replace with verified handling and placement</text>
-<!-- Processing cards form parallel paths. -->
-<path d="M1063 637 H1092" class="line animated-trunk"/><path d="M1092 426 V669" class="line animated-trunk"/>
-<circle cx="1092" cy="637" r="4.5" fill="#7168e9"/><path d="M1092 426 H1117" class="flow animated-flow"/><path d="M1092 546 H1117" class="flow animated-flow"/><path d="M1092 669 H1117" class="flow animated-flow"/>
-<rect x="1117" y="379" width="483" height="95" rx="15" fill="#fff" stroke="#e1e5f3" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="1138" y="400" width="49" height="49" rx="14" fill="#eeedff"/><circle cx="1162.5" cy="424.5" r="5" fill="#7168e9"/><circle cx="1153" cy="414" r="3" fill="#a09af3"/><circle cx="1172" cy="415" r="3" fill="#a09af3"/><circle cx="1153" cy="435" r="3" fill="#a09af3"/><circle cx="1172" cy="435" r="3" fill="#a09af3"/>
-<text x="1205" y="417" class="cardtitle" style="font-size:17px">Embedding models</text><text x="1205" y="443" class="body">Create vector representations</text>
-<rect x="1117" y="499" width="483" height="95" rx="15" fill="#fff" stroke="#dcebe7" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="1138" y="520" width="49" height="49" rx="14" fill="#e7f7f1"/><path d="M1152 535l10 18 11-18 M1152 535h21" fill="none" stroke="#43a78e" stroke-width="1.7"/><circle cx="1152" cy="535" r="3" fill="#43a78e"/><circle cx="1173" cy="535" r="3" fill="#43a78e"/><circle cx="1162" cy="553" r="3" fill="#43a78e"/>
-<text x="1205" y="537" class="cardtitle" style="font-size:16px">Classification models</text><text x="1205" y="563" class="body">Classification for the knowledge graph</text>
-<rect x="1117" y="619" width="483" height="116" rx="15" fill="#fff" stroke="#e1e5f0" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="1138" y="641" width="49" height="49" rx="14" fill="#edf1f7"/><path d="M1150 656h25 M1150 663h17 M1150 670h22" stroke="#8293ad" stroke-width="2" stroke-linecap="round"/>
-<text x="1205" y="657" class="cardtitle" style="font-size:17px">Small language models (SLMs)</text><text x="1205" y="683" class="body">Summarization · compression</text><text x="1205" y="706" class="body">Information extraction · and more</text>
-<!-- Individual storage cards. Only confirmed mappings receive arrows. -->
-<path d="M1600 426 H1675" class="flow animated-flow"/><path d="M1600 546 H1675" class="flow animated-flow"/>
-<rect x="1675" y="379" width="400" height="95" rx="15" fill="#fff" stroke="#e1e5f3" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="1696" y="400" width="49" height="49" rx="14" fill="#eeedff"/><circle cx="1720" cy="424" r="8" fill="none" stroke="#7168e9" stroke-width="2"/><circle cx="1711" cy="415" r="2.5" fill="#a19bf2"/><circle cx="1729" cy="434" r="2.5" fill="#a19bf2"/>
-<text x="1763" y="417" class="cardtitle" style="font-size:17px">Vector store</text><text x="1763" y="443" class="body">Vector representations</text>
-<rect x="1675" y="499" width="400" height="95" rx="15" fill="#fff" stroke="#dcebe7" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="1696" y="520" width="49" height="49" rx="14" fill="#e7f7f1"/><path d="M1710 535l10 18 11-18 M1710 535h21" fill="none" stroke="#43a78e" stroke-width="1.7"/><circle cx="1710" cy="535" r="3" fill="#43a78e"/><circle cx="1731" cy="535" r="3" fill="#43a78e"/><circle cx="1720" cy="553" r="3" fill="#43a78e"/>
-<text x="1763" y="537" class="cardtitle" style="font-size:17px">Graph database</text><text x="1763" y="563" class="body">Knowledge graph</text>
-<rect x="1675" y="619" width="400" height="116" rx="15" fill="#fff" stroke="#e1e5f0" stroke-width="1.4" filter="url(#shadow)"/>
-<rect x="1696" y="641" width="49" height="49" rx="14" fill="#edf1f7"/><ellipse cx="1720" cy="654" rx="11" ry="4" fill="none" stroke="#8293ad" stroke-width="1.7"/><path d="M1709 654v17c0 5 22 5 22 0v-17 M1709 662c0 5 22 5 22 0" fill="none" stroke="#8293ad" stroke-width="1.7"/>
-<text x="1763" y="657" class="cardtitle" style="font-size:17px">Relational database</text><text x="1763" y="683" class="body">Relational storage</text><text x="1763" y="706" class="tiny">Example storage role</text>
-<text x="1117" y="775" class="tiny">Example flow: verify every relationship before sharing.</text>
-<!-- footer -->
-<circle cx="83" cy="919" r="5" fill="#52b49a"/><text x="99" y="923" class="body" style="font-size:12px">Example only. Replace all labels, flows and caveats with information supported by your sources.</text>
-<text x="99" y="946" class="tiny">Use arrows only for confirmed flows; indicate uncertainty where a relationship or component has not been established.</text>
-<text x="1945" y="927" class="smallcaps">ARCHITECTURE  /  01</text>
+<g id="scene-application" hidden="">
+<text x="1950" y="257" class="smallcaps">05 / CONSUMER</text>
+<text x="1950" y="283" class="section">A downstream application</text>
+<text x="2510" y="257" class="smallcaps">06 / EXTERNAL PLATFORM</text>
+<text x="2510" y="283" class="section">An integration outside the service</text>
+<rect x="1915" y="300" width="470" height="440" rx="22" fill="none" stroke="#b8c5e3" stroke-dasharray="7 7"/>
+<rect x="1950" y="370" width="400" height="160" rx="18" class="node" filter="url(#shadow)"/>
+<text x="1975" y="408" class="cardtitle" style="font-size:20px">Example application</text>
+<text x="1975" y="447" class="body">Uses information from the data store</text>
+<text x="1975" y="477" class="body">Performs the depicted integration</text>
+<path d="M1800 450 H1950" class="flow animated-flow"/>
+<text x="1815" y="431" class="tiny">reads data</text>
+<path d="M2350 450 H2510" class="flow animated-flow"/>
+<rect x="2510" y="370" width="300" height="160" rx="18" class="node" filter="url(#shadow)"/>
+<text x="2535" y="408" class="cardtitle" style="font-size:20px">Platform API</text>
+<text x="2535" y="447" class="body">Example external system</text>
+<text x="2535" y="477" class="body">Permissions not specified</text>
+<rect x="1950" y="590" width="400" height="110" rx="18" fill="#f2f1ff" stroke="#dcd9f3" filter="url(#shadow)"/>
+<text x="1975" y="619" class="tag">SHARED DEPENDENCY / P1</text>
+<text x="1975" y="651" class="cardtitle" style="font-size:18px">Example model gateway</text>
+<text x="1975" y="679" class="tiny">P1 · same shared service</text>
+<path d="M2150 530 V590" class="flow animated-flow"/>
+</g>
+<g id="scene-analysis" hidden="">
+<text x="75" y="257" class="smallcaps">01 / INPUT</text>
+<text x="75" y="283" class="section">Example interactions</text>
+<text x="470" y="257" class="smallcaps">02 / PREPARATION</text>
+<text x="470" y="283" class="section">Prepare the input</text>
+<text x="1000" y="257" class="smallcaps">03 / PARALLEL AGENTS</text>
+<text x="1000" y="283" class="section">Two independent roles</text>
+<text x="1650" y="257" class="smallcaps">04 / RESULTS</text>
+<text x="1650" y="283" class="section">Shared output consumers</text>
+<rect x="75" y="490" width="300" height="150" rx="18" class="node" filter="url(#shadow)"/>
+<text x="100" y="530" class="cardtitle" style="font-size:20px">Source interactions</text>
+<text x="100" y="566" class="body">Example tickets · calls · chats</text>
+<rect x="470" y="490" width="350" height="150" rx="18" class="node" filter="url(#shadow)"/>
+<text x="495" y="530" class="cardtitle" style="font-size:20px">Preparation</text>
+<text x="495" y="566" class="body">Example data transformation</text>
+<path d="M375 565 H470" class="flow animated-flow"/>
+<path d="M820 565 H930 M930 495 V635" class="line animated-trunk"/>
+<path d="M930 495 H1000" class="flow animated-flow"/>
+<path d="M930 635 H1000" class="flow animated-flow"/>
+<rect x="1000" y="325" width="470" height="80" rx="18" fill="#f2f1ff" stroke="#dcd9f3" filter="url(#shadow)"/>
+<text x="1023" y="349" class="tag">SHARED MODEL ACCESS / P1</text>
+<text x="1023" y="378" class="cardtitle" style="font-size:18px">Example model gateway</text>
+<text x="1260" y="378" class="tiny">Used by both agents</text>
+<rect x="1000" y="450" width="470" height="90" rx="18" class="node" filter="url(#shadow)"/>
+<text x="1028" y="484" class="cardtitle" style="font-size:20px">Review Agent</text>
+<text x="1028" y="514" class="body">Quality · Tone · Meaning</text>
+<rect x="1380" y="466" width="68" height="23" rx="11.5" fill="#eeedff"/><text x="1391" y="482" class="tag" style="font-size:10px">via P1</text>
+<rect x="1000" y="590" width="470" height="90" rx="18" class="node" filter="url(#shadow)"/>
+<text x="1028" y="624" class="cardtitle" style="font-size:20px">Insights Agent</text>
+<text x="1028" y="654" class="body">Themes · Trends · Actions</text>
+<rect x="1380" y="606" width="68" height="23" rx="11.5" fill="#eeedff"/><text x="1391" y="622" class="tag" style="font-size:10px">via P1</text>
+<path d="M1470 495 H1540 M1470 635 H1540 M1540 495 V635" class="line animated-trunk"/>
+<circle cx="1540" cy="495" r="3.5" fill="#aab6cf"/><circle cx="1540" cy="635" r="3.5" fill="#aab6cf"/>
+<path d="M1540 495 H1650" class="flow animated-flow"/>
+<path d="M1540 635 H1650" class="flow animated-flow"/>
+<text x="1000" y="712" class="tag">RUN IN PARALLEL / EXAMPLE</text>
+<rect x="1650" y="450" width="550" height="90" rx="18" class="node" filter="url(#shadow)"/>
+<text x="1678" y="484" class="cardtitle" style="font-size:20px">Review interface</text>
+<text x="1678" y="514" class="body">Results for people</text>
+<rect x="1650" y="590" width="550" height="90" rx="18" class="node" filter="url(#shadow)"/>
+<text x="1678" y="624" class="cardtitle" style="font-size:20px">Results consumer</text>
+<text x="1678" y="654" class="body">Example downstream agent</text>
+</g>
+<text id="footer-note" x="75" y="900" class="body" style="font-size:12px">Fictional example. Replace all content and verify every arrow and boundary before sharing.</text>
+<text id="footer-marker" x="1800" y="900" class="smallcaps">EXAMPLE / OVERVIEW</text>
 </svg></article></main>
-<div class="zoom-controls" role="group" aria-label="Canvas zoom controls">
-  <button type="button" id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button>
-  <button type="button" id="zoom-reset" class="zoom-value" aria-label="Fit diagram to screen" title="Fit diagram to screen">Fit</button>
-  <button type="button" id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
-</div>
+<div class="zoom-controls" role="group" aria-label="Canvas zoom controls"><button type="button" id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button><button type="button" id="zoom-reset" class="zoom-value" aria-label="Fit diagram to screen" title="Fit diagram to screen">Fit</button><button type="button" id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button></div>
 <script>
 (()=>{
+  const sizes={overview:[2000,940],application:[2900,940],analysis:[2280,940]};
+  const titles={overview:'From sources to usable data',application:'An application connected to the existing system',analysis:'Compact parallel agents and shared results'};
+  let selected='overview',zoom=100,fitMode=true;
   const minimum=10,maximum=200,step=25;
-  let zoom=100,fitMode=true;
-  const out=document.getElementById('zoom-out');
-  const inside=document.getElementById('zoom-in');
-  const reset=document.getElementById('zoom-reset');
-  function baseWidth(){return Math.min(2200,Math.max(1770,window.innerWidth-80))}
-  function fitZoom(){
-    const availableWidth=Math.max(1,window.innerWidth-84);
-    const availableHeight=Math.max(1,window.innerHeight-94);
-    return Math.min(100,availableWidth/baseWidth()*100,availableHeight*(2150/1020)/baseWidth()*100);
-  }
+  const byId=id=>document.getElementById(id);
+  const baseWidth=()=>Math.min(2900,Math.max(1700,window.innerWidth-80));
   function render(){
-    if(fitMode) zoom=fitZoom();
+    const [width,height]=sizes[selected];
+    if(fitMode) zoom=Math.min(100,Math.max(1,window.innerWidth-84)/baseWidth()*100,Math.max(1,window.innerHeight-94)/(height/width)/baseWidth()*100);
     document.documentElement.style.setProperty('--diagram-width',(baseWidth()*zoom/100)+'px');
-    reset.textContent=Math.round(zoom)+'%';
-    reset.setAttribute('aria-label','Zoom '+Math.round(zoom)+' percent. Fit diagram to screen');
-    out.disabled=zoom<=minimum;
-    inside.disabled=zoom>=maximum;
+    byId('zoom-reset').textContent=Math.round(zoom)+'%';
+    byId('zoom-reset').setAttribute('aria-label','Zoom '+Math.round(zoom)+' percent. Fit to screen');
+    byId('zoom-out').disabled=zoom<=minimum;byId('zoom-in').disabled=zoom>=maximum;
   }
-  out.addEventListener('click',()=>{fitMode=false;zoom=Math.max(minimum,zoom-step);render()});
-  inside.addEventListener('click',()=>{fitMode=false;zoom=Math.min(maximum,zoom+step);render()});
-  reset.addEventListener('click',()=>{fitMode=true;render()});
-  window.addEventListener('resize',render);
-  render();
+  function selectView(name){
+    if(!sizes[name]) return;
+    selected=name;
+    const [width,height]=sizes[name];
+    byId('canvas').setAttribute('viewBox','0 0 '+width+' '+height);
+    byId('page-bg').setAttribute('width',String(width));byId('page-bg').setAttribute('height',String(height));
+    for(const id of ['canvas-bg','canvas-dots']) byId(id).setAttribute('width',String(width-80));
+    byId('header-right').setAttribute('transform','translate('+(width-2000)+' 0)');
+    byId('header-divider').setAttribute('x2',String(width-70));
+    byId('canvas-title').textContent=titles[name];
+    byId('footer-marker').setAttribute('x',String(width-200));byId('footer-marker').textContent='EXAMPLE / '+name.toUpperCase();
+    byId('scene-overview').toggleAttribute('hidden',name==='analysis');
+    byId('scene-application').toggleAttribute('hidden',name!=='application');
+    byId('scene-analysis').toggleAttribute('hidden',name!=='analysis');
+    document.querySelectorAll('[data-view-button]').forEach(button=>{const active=button.getAttribute('data-view-button')===name;button.setAttribute('data-active',String(active));button.setAttribute('aria-pressed',String(active))});
+    render();
+  }
+  function readHash(){const name=window.location.hash.slice(1).toLowerCase();return sizes[name]?name:'overview'}
+  function navigate(name){if(!sizes[name])return;if(window.location.hash!=='#'+name)window.history.pushState(null,'','#'+name);selectView(name)}
+  function syncHash(){const name=readHash();if(name!==selected)selectView(name)}
+  document.querySelectorAll('[data-view-button]').forEach(button=>{const activate=()=>navigate(button.getAttribute('data-view-button'));button.addEventListener('click',activate);button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();activate()}})});
+  byId('zoom-out').addEventListener('click',()=>{fitMode=false;zoom=Math.max(minimum,zoom-step);render()});
+  byId('zoom-in').addEventListener('click',()=>{fitMode=false;zoom=Math.min(maximum,zoom+step);render()});
+  byId('zoom-reset').addEventListener('click',()=>{fitMode=true;render()});
+  window.addEventListener('resize',render);window.addEventListener('hashchange',syncHash);window.addEventListener('popstate',syncHash);
+  const initial=readHash();if(window.location.hash!=='#'+initial)window.history.replaceState(null,'','#'+initial);selectView(initial);
 })();
 </script></body></html>
