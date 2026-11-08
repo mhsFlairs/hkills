@@ -1,9 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Architecture canvas starter</title><style>
-*{box-sizing:border-box}html{min-height:100%;overflow:auto}body{margin:0;background:#eef1f7;color:#18213b;font-family:Inter,"Segoe UI",Arial,sans-serif}main{width:max-content;min-width:100%;padding:36px 40px 54px}article{width:var(--diagram-width, 1770px);margin:0 auto;background:#fff;border:1px solid #dce2ee;box-shadow:0 18px 55px #21355912;border-radius:20px;overflow:hidden}svg{display:block;width:100%;height:auto}.zoom-controls{position:fixed;right:24px;bottom:24px;z-index:10;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid #dce2ee;border-radius:14px;background:rgba(255,255,255,.96);box-shadow:0 8px 28px #24345b24;backdrop-filter:blur(8px)}.zoom-controls button{min-width:38px;height:38px;border:0;border-radius:9px;background:transparent;color:#263451;font:600 21px Inter,"Segoe UI",Arial,sans-serif;cursor:pointer}.zoom-controls button:hover{background:#f0efff;color:#5d55d6}.zoom-controls button:focus-visible{outline:2px solid #7067e8;outline-offset:2px}.zoom-controls button:disabled{opacity:.35;cursor:default}.zoom-controls .zoom-value{min-width:60px;padding:0 7px;font-size:13px;font-weight:700}.zoom-controls .zoom-value:hover{background:#f0efff}@keyframes travel{to{stroke-dashoffset:-32}}.animated-flow{stroke-dasharray:9 7;animation:travel 1.4s linear infinite}.animated-trunk{stroke-dasharray:5 8;animation:travel 2.2s linear infinite}@media (prefers-reduced-motion:reduce){.animated-flow,.animated-trunk{animation:none;stroke-dasharray:none}}@media print{.zoom-controls{display:none}.animated-flow,.animated-trunk{animation:none;stroke-dasharray:none}@page{size:A3 landscape;margin:7mm}body{background:white}main{width:auto;min-width:0;padding:0}article{width:auto;border:none;box-shadow:none;border-radius:0}svg{max-height:96vh}}
-
-[hidden]{display:none}.view-tab{cursor:pointer}.tabtext{font-size:13px;font-weight:700;fill:#8993a8}.view-tab[data-active="true"] rect{fill:#eeedff}.view-tab[data-active="true"] text{fill:#625ad7}.view-tab:focus-visible rect{stroke:#655ce8;stroke-width:3}
-</style></head><body><main><article>
-<svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 940" role="group" aria-labelledby="title description"><title id="title">Fictional architecture example</title><desc id="description">Three editable example views demonstrate a flow, a connected consumer, and compact parallel agents. Replace these synthetic examples with verified facts.</desc>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"><title>Architecture and strategy canvas starter</title><style>
+*{box-sizing:border-box}html{min-height:100%;overflow:auto;overflow-anchor:none;scroll-behavior:auto}body{margin:0;background:#eef1f7;color:#18213b;font-family:Inter,"Segoe UI",Arial,sans-serif}main{width:max-content;min-width:100%;min-height:100vh;padding:calc(36px + var(--pan-top,0px)) calc(40px + var(--pan-right,0px)) calc(54px + var(--pan-bottom,0px)) calc(40px + var(--pan-left,0px));touch-action:pan-x pan-y}main.is-manual article{margin:0}main.is-pinching{user-select:none;-webkit-user-select:none}article{width:var(--diagram-width, calc(100vw - 84px));margin:0 auto;background:#fff;border:1px solid #dce2ee;box-shadow:0 18px 55px #21355912;border-radius:20px;overflow:hidden}svg{display:block;width:100%;height:auto}[hidden]{display:none}.view-tab{cursor:pointer}.view-tab[data-active="true"] rect{fill:#efeeff}.view-tab[data-active="true"] text{fill:#625ad7}.view-tab[data-active="false"] rect{fill:#f2f4f8}.view-tab[data-active="false"] text{fill:#8d97a9}.view-tab:focus-visible rect{stroke:#574ed3;stroke-width:3}.zoom-controls{position:fixed;right:24px;bottom:24px;z-index:10;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid #dce2ee;border-radius:14px;background:rgba(255,255,255,.96);box-shadow:0 8px 28px #24345b24;backdrop-filter:blur(8px)}.zoom-controls button{-webkit-tap-highlight-color:transparent;min-width:44px;height:44px;border:0;border-radius:9px;background:transparent;color:#263451;font:600 21px Inter,"Segoe UI",Arial,sans-serif;cursor:pointer}.zoom-controls button:hover{background:#f0efff;color:#5d55d6}.zoom-controls button:focus-visible{outline:2px solid #7067e8;outline-offset:2px}.zoom-controls button:disabled{opacity:.35;cursor:default}.zoom-controls .zoom-value{min-width:60px;padding:0 7px;font-size:13px;font-weight:700}.zoom-controls .zoom-value:hover{background:#f0efff}.zoom-controls .layer-toggle{display:flex;align-items:center;gap:8px;min-width:145px;padding:0 10px;font-size:13px}.layer-toggle svg{width:18px;height:18px;flex:none}.zoom-controls .layer-toggle[aria-pressed="true"]{background:#e6f5ef;color:#23745f}.layer-switch{width:25px;height:15px;border-radius:10px;background:#dce2eb;padding:2px;transition:background .15s}.layer-switch:after{content:"";display:block;width:11px;height:11px;border-radius:50%;background:#fff;box-shadow:0 1px 2px #26345122;transition:transform .15s}.layer-toggle[aria-pressed="true"] .layer-switch{background:#399c7d}.layer-toggle[aria-pressed="true"] .layer-switch:after{transform:translateX(10px)}.control-divider{width:1px;height:24px;margin:0 3px;background:#e4e8ef}@media(max-width:480px){.zoom-controls{right:12px;bottom:12px;left:12px;justify-content:center}.zoom-controls .layer-toggle{min-width:130px;padding:0 6px}}@media(prefers-reduced-motion:reduce){.layer-switch,.layer-switch:after{transition:none}}.zoom-controls #toggle-roles{min-width:170px}.zoom-controls #toggle-roles[aria-pressed="true"]{background:#eaf0fc;color:#4269b2}#toggle-roles[aria-pressed="true"] .layer-switch{background:#5f80c4}.zoom-controls .layer-toggle:disabled{opacity:.45;cursor:default}@media(max-width:600px){.zoom-controls{left:12px;right:12px;bottom:12px;justify-content:center;flex-wrap:wrap}.zoom-controls .layer-toggle,.zoom-controls #toggle-roles{min-width:130px;flex:1 1 calc(50% - 8px);justify-content:center}.control-divider{display:none}}.zoom-controls [hidden]{display:none}.zoom-controls .map-overview{font-size:13px;min-width:140px;padding:0 12px;color:#625ad7;background:#f0effc}.touch-view-picker{display:none}.touch-view-picker select{min-width:0;flex:1;height:44px;padding:0 12px;border:1px solid #dce2ee;border-radius:9px;background:#f6f8fc;color:#263451;font:600 14px Inter,"Segoe UI",Arial,sans-serif}.touch-view-picker select:focus-visible{outline:2px solid #7067e8;outline-offset:2px}.touch-view-picker span{font-size:12px;font-weight:650;color:#738099}@media(max-width:600px),(pointer:coarse){.zoom-controls{left:12px;right:12px;bottom:12px;max-width:520px;margin-left:auto;justify-content:center;flex-wrap:wrap}.touch-view-picker{display:flex;flex:1 0 100%;align-items:center;gap:12px;padding:0 7px}.zoom-controls .layer-toggle,.zoom-controls #toggle-roles{min-width:130px;flex:1 1 calc(50% - 8px);justify-content:center}.control-divider{display:none}.view-tab{visibility:hidden}}@media(min-width:601px) and (pointer:coarse){.zoom-controls .layer-toggle{flex:0 0 auto;min-width:145px}.zoom-controls #toggle-roles{flex:0 0 auto;min-width:160px}}@keyframes travel{to{stroke-dashoffset:-32}}.animated-flow{stroke-dasharray:9 7;animation:travel 1.4s linear infinite}.animated-trunk{stroke-dasharray:5 8;animation:travel 2.2s linear infinite}@media (prefers-reduced-motion:reduce){.animated-flow,.animated-trunk{animation:none;stroke-dasharray:none}}@media print{.zoom-controls{display:none}.animated-flow,.animated-trunk{animation:none;stroke-dasharray:none}@page{size:A3 landscape;margin:7mm}body{background:white}main{width:auto;min-width:0;min-height:0;padding:0}article{width:auto;border:none;box-shadow:none;border-radius:0}svg{max-height:96vh}}
+</style></head><body><main><article title="Pinch to zoom. Scroll or swipe to pan."><svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 940" role="group" aria-labelledby="title description"><title id="title">Fictional architecture and strategy examples</title><desc id="description">Fictional editable examples demonstrate architecture, optional layers, compact parallel agents and a strategy mind map. Replace the example content with evidence before sharing.</desc>
 <defs>
   <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#dce4f3"/></pattern>
   <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#746af5"/><stop offset="1" stop-color="#574ed3"/></linearGradient>
@@ -15,15 +12,10 @@
   </style>
 </defs>
 <rect id="page-bg" width="2000" height="940" fill="#fff"/>
-<text x="70" y="69" class="eyebrow">ARCHITECTURE CANVAS / FICTIONAL EXAMPLE</text>
+<text id="canvas-eyebrow" x="70" y="69" class="eyebrow">ARCHITECTURE CANVAS / FICTIONAL EXAMPLE</text>
 <text id="canvas-title" x="70" y="122" class="title">From sources to usable data</text>
 <text id="canvas-subtitle" x="70" y="153" class="subtitle">An editable visual pattern; all components and connections are examples.</text>
-<g id="header-right">
-<text x="1860" y="69" class="tag" style="font-size:20px">EXAMPLE</text>
-<g class="view-tab" data-view-button="overview" role="button" tabindex="0" aria-label="Show Overview example" aria-pressed="false"><rect x="1530" y="112" width="110" height="35" rx="17.5" fill="#f2f4f8"/><text x="1547" y="134" class="tabtext">Overview</text></g>
-<g class="view-tab" data-view-button="application" role="button" tabindex="0" aria-label="Show Application example" aria-pressed="false"><rect x="1650" y="112" width="120" height="35" rx="17.5" fill="#f2f4f8"/><text x="1667" y="134" class="tabtext">Application</text></g>
-<g class="view-tab" data-view-button="analysis" role="button" tabindex="0" aria-label="Show Analysis example" aria-pressed="false"><rect x="1780" y="112" width="110" height="35" rx="17.5" fill="#f2f4f8"/><text x="1797" y="134" class="tabtext">Analysis</text></g>
-</g><line id="header-divider" x1="70" y1="184" x2="1930" y2="184" stroke="#e8ecf3"/>
+<g id="header-right"><text x="1860" y="69" class="tag" style="font-size:20px">EXAMPLE</text><g class="view-tab" data-view-button="overview" role="button" tabindex="0" aria-label="Show Overview" aria-pressed="false"><rect x="1390" y="112" width="110" height="35" rx="17.5" fill="#f2f4f8"/><text x="1407" y="134" style="font-size:13px;font-weight:700;fill:#8993a8">Overview</text></g><g class="view-tab" data-view-button="application" role="button" tabindex="0" aria-label="Show Application" aria-pressed="false"><rect x="1510" y="112" width="120" height="35" rx="17.5" fill="#f2f4f8"/><text x="1527" y="134" style="font-size:13px;font-weight:700;fill:#8993a8">Application</text></g><g class="view-tab" data-view-button="analysis" role="button" tabindex="0" aria-label="Show Analysis" aria-pressed="false"><rect x="1640" y="112" width="110" height="35" rx="17.5" fill="#f2f4f8"/><text x="1657" y="134" style="font-size:13px;font-weight:700;fill:#8993a8">Analysis</text></g><g class="view-tab" data-view-button="strategy" role="button" tabindex="0" aria-label="Show Strategy map" aria-pressed="false"><rect x="1760" y="112" width="140" height="35" rx="17.5" fill="#f2f4f8"/><text x="1777" y="134" style="font-size:13px;font-weight:700;fill:#8993a8">Strategy map</text></g></g><line id="header-divider" x1="70" y1="184" x2="1930" y2="184" stroke="#e8ecf3"/>
 <rect id="canvas-bg" x="40" y="212" width="1920" height="630" rx="21" fill="#f8faff"/><rect id="canvas-dots" x="40" y="212" width="1920" height="630" rx="21" fill="url(#dots)" opacity=".6"/>
 <g id="scene-overview">
 <text x="75" y="257" class="smallcaps">01 / SOURCES</text>
@@ -61,7 +53,7 @@
 <text x="895" y="619" class="tag">SHARED DEPENDENCY / P1</text>
 <text x="895" y="651" class="cardtitle" style="font-size:18px">Example model gateway</text>
 <text x="895" y="679" class="tiny">Fictional shared-service reference</text>
-</g>
+<g data-layer="telemetry" hidden="" role="group" aria-label="Illustrative service telemetry"><rect x="495" y="545" width="250" height="26" rx="8" fill="#e8f7f3" stroke="#abd9cb"/><text x="507" y="562" style="font-size:12px;font-weight:650;fill:#29735f">Service metrics · Errors</text><rect x="895" y="545" width="300" height="26" rx="8" fill="#e8f7f3" stroke="#abd9cb"/><text x="907" y="562" style="font-size:12px;font-weight:650;fill:#29735f">Service metrics · Errors</text></g><g data-layer="roles" hidden="" role="group" aria-label="Fictional processing roles"><text x="495" y="506" style="font-size:12px;font-weight:650;fill:#4269b2">Document preparation specialist</text><text x="895" y="506" style="font-size:12px;font-weight:650;fill:#4269b2">Cedar — Light · bounded transformation</text></g></g>
 <g id="scene-application" hidden="">
 <text x="1950" y="257" class="smallcaps">05 / CONSUMER</text>
 <text x="1950" y="283" class="section">A downstream application</text>
@@ -84,7 +76,7 @@
 <text x="1975" y="651" class="cardtitle" style="font-size:18px">Example model gateway</text>
 <text x="1975" y="679" class="tiny">P1 · same shared service</text>
 <path d="M2150 530 V590" class="flow animated-flow"/>
-</g>
+<g data-layer="telemetry" hidden="" role="group" aria-label="Illustrative consumer telemetry"><rect x="1975" y="545" width="350" height="26" rx="8" fill="#e8f7f3" stroke="#abd9cb"/><text x="1987" y="562" style="font-size:12px;font-weight:650;fill:#29735f">Service metrics · Errors</text></g><g data-layer="roles" hidden="" role="group" aria-label="Fictional consumer model role"><text x="1975" y="506" style="font-size:12px;font-weight:650;fill:#4269b2">Birch — Balanced · tool coordination</text></g></g>
 <g id="scene-analysis" hidden="">
 <text x="75" y="257" class="smallcaps">01 / INPUT</text>
 <text x="75" y="283" class="section">Example interactions</text>
@@ -120,59 +112,507 @@
 <circle cx="1540" cy="495" r="3.5" fill="#aab6cf"/><circle cx="1540" cy="635" r="3.5" fill="#aab6cf"/>
 <path d="M1540 495 H1650" class="flow animated-flow"/>
 <path d="M1540 635 H1650" class="flow animated-flow"/>
-<text x="1000" y="712" class="tag">RUN IN PARALLEL / EXAMPLE</text>
+<text x="1000" y="752" class="tag">RUN IN PARALLEL / EXAMPLE</text>
 <rect x="1650" y="450" width="550" height="90" rx="18" class="node" filter="url(#shadow)"/>
 <text x="1678" y="484" class="cardtitle" style="font-size:20px">Review interface</text>
 <text x="1678" y="514" class="body">Results for people</text>
 <rect x="1650" y="590" width="550" height="90" rx="18" class="node" filter="url(#shadow)"/>
 <text x="1678" y="624" class="cardtitle" style="font-size:20px">Results consumer</text>
 <text x="1678" y="654" class="body">Example downstream agent</text>
-</g>
+<g data-layer="telemetry" hidden="" role="group" aria-label="Illustrative agent telemetry"><rect x="1024" y="550" width="422" height="26" rx="8" fill="#e8f7f3" stroke="#abd9cb"/><text x="1036" y="567" style="font-size:12px;font-weight:650;fill:#29735f">Agent traces · Errors · Workflow visibility</text><rect x="1024" y="690" width="422" height="26" rx="8" fill="#e8f7f3" stroke="#abd9cb"/><text x="1036" y="707" style="font-size:12px;font-weight:650;fill:#29735f">Agent traces · Errors · Workflow visibility</text></g><g data-layer="roles" hidden="" role="group" aria-label="Fictional analysis model roles"><rect x="1220" y="466" width="150" height="23" rx="11.5" fill="#edf3ff" stroke="#cbdaf1"/><text x="1230" y="482" style="font-size:10px;font-weight:700;fill:#4269b2">Birch — Balanced</text><rect x="1220" y="606" width="150" height="23" rx="11.5" fill="#edf3ff" stroke="#cbdaf1"/><text x="1230" y="622" style="font-size:10px;font-weight:700;fill:#4269b2">Cedar — Light</text></g></g>
+<g id="scene-strategy" hidden="" role="group" aria-label="Fictional function-first strategy map"></g>
 <text id="footer-note" x="75" y="900" class="body" style="font-size:12px">Fictional example. Replace all content and verify every arrow and boundary before sharing.</text>
 <text id="footer-marker" x="1800" y="900" class="smallcaps">EXAMPLE / OVERVIEW</text>
-</svg></article></main>
-<div class="zoom-controls" role="group" aria-label="Canvas zoom controls"><button type="button" id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button><button type="button" id="zoom-reset" class="zoom-value" aria-label="Fit diagram to screen" title="Fit diagram to screen">Fit</button><button type="button" id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button></div>
+</svg></article></main><div class="zoom-controls" role="group" aria-label="Canvas view, layers and zoom">
+<label class="touch-view-picker"><span>View</span><select id="view-select" aria-label="Canvas view"><option value="overview">Overview</option><option value="application">Application</option><option value="analysis">Analysis</option><option value="strategy">Strategy map</option></select></label>
+<button id="map-clear" class="map-overview" type="button" aria-label="Show all strategy branches" hidden="">All branches</button>
+<button id="toggle-roles" class="layer-toggle" type="button" data-layer-toggle="roles" aria-label="Model roles layer" aria-pressed="false"><span>Model roles</span><span class="layer-switch" aria-hidden="true"></span></button>
+<button id="toggle-telemetry" class="layer-toggle" type="button" data-layer-toggle="telemetry" aria-label="Telemetry layer" aria-pressed="false"><span>Telemetry</span><span class="layer-switch" aria-hidden="true"></span></button>
+<span class="control-divider" aria-hidden="true"></span><button id="zoom-out" type="button" aria-label="Zoom out">−</button><button id="zoom-reset" class="zoom-value" type="button" aria-label="Fit diagram to screen" title="Fit diagram to screen. Pinch to zoom; scroll or swipe to move.">Fit</button><button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+</div>
+<script id="strategy-data" type="application/json">{
+  "center": "Choose by function",
+  "note": "Cedar and Birch are fictional model families. These examples do not prescribe a real deployment.",
+  "functions": [
+    {
+      "id": "execution",
+      "side": "left",
+      "title": "Task execution",
+      "need": [
+        "Complete a task accurately.",
+        "Coordinate a few dependent steps."
+      ],
+      "approach": [
+        "Use reasoning where coordination matters.",
+        "Use a lighter tier for bounded supporting work."
+      ],
+      "examples": [
+        {
+          "name": "Cedar — Balanced",
+          "purpose": "Plan and coordinate tools"
+        },
+        {
+          "name": "Cedar — Light",
+          "purpose": "Prepare bounded inputs"
+        }
+      ]
+    },
+    {
+      "id": "conversation",
+      "side": "left",
+      "title": "Conversation",
+      "need": [
+        "Keep context and respond clearly.",
+        "Take an appropriate next action."
+      ],
+      "approach": [
+        "Balance language, reasoning and tool use.",
+        "Use focused support for short decisions."
+      ],
+      "examples": [
+        {
+          "name": "Birch — Balanced",
+          "purpose": "Contextual assistance"
+        },
+        {
+          "name": "Cedar — Light",
+          "purpose": "Intake and short decisions"
+        }
+      ]
+    },
+    {
+      "id": "documents",
+      "side": "left",
+      "title": "Document understanding",
+      "need": [
+        "Make mixed-format input usable.",
+        "Organize extracted information."
+      ],
+      "approach": [
+        "Separate extraction from interpretation.",
+        "Choose the tier that meets the quality target."
+      ],
+      "examples": [
+        {
+          "name": "Document extraction specialist",
+          "purpose": "Extract text and structure"
+        },
+        {
+          "name": "Vision specialist",
+          "purpose": "Interpret visual input"
+        },
+        {
+          "name": "Cedar — Light",
+          "purpose": "Structure extracted information"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "side": "right",
+      "title": "Retrieval and relevance",
+      "need": [
+        "Find useful material.",
+        "Judge which results fit the request."
+      ],
+      "approach": [
+        "Retrieve by meaning.",
+        "Then filter, score or rank the candidates."
+      ],
+      "examples": [
+        {
+          "name": "Embedding specialist",
+          "purpose": "Find related material"
+        },
+        {
+          "name": "Relevance scorer",
+          "purpose": "Filter and rank results"
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "side": "right",
+      "title": "Privacy handling",
+      "need": [
+        "Recognize sensitive information.",
+        "Support its appropriate handling."
+      ],
+      "approach": [
+        "Separate locating spans from classifying text.",
+        "Keep detailed handling grounded in evidence."
+      ],
+      "examples": [
+        {
+          "name": "Entity detector",
+          "purpose": "Locate sensitive spans"
+        },
+        {
+          "name": "Privacy classifier",
+          "purpose": "Classify privacy-related text"
+        }
+      ]
+    },
+    {
+      "id": "speech",
+      "side": "right",
+      "title": "Speech interaction",
+      "need": [
+        "Understand and generate speech.",
+        "Recognize when to respond."
+      ],
+      "approach": [
+        "Use specialists for each speech function.",
+        "Evaluate them on the intended interaction."
+      ],
+      "examples": [
+        {
+          "name": "Speech recognition",
+          "purpose": "Speech to text"
+        },
+        {
+          "name": "Speech generation",
+          "purpose": "Text to speech"
+        },
+        {
+          "name": "Voice activity detection",
+          "purpose": "Speech versus silence"
+        },
+        {
+          "name": "Turn detection",
+          "purpose": "End of a speaker’s turn"
+        }
+      ]
+    }
+  ]
+}</script>
 <script>
 (()=>{
-  const sizes={overview:[2000,940],application:[2900,940],analysis:[2280,940]};
-  const titles={overview:'From sources to usable data',application:'An application connected to the existing system',analysis:'Compact parallel agents and shared results'};
-  let selected='overview',zoom=100,fitMode=true;
-  const minimum=10,maximum=200,step=25;
-  const byId=id=>document.getElementById(id);
-  const baseWidth=()=>Math.min(2900,Math.max(1700,window.innerWidth-80));
-  function render(){
-    const [width,height]=sizes[selected];
-    if(fitMode) zoom=Math.min(100,Math.max(1,window.innerWidth-84)/baseWidth()*100,Math.max(1,window.innerHeight-94)/(height/width)/baseWidth()*100);
-    document.documentElement.style.setProperty('--diagram-width',(baseWidth()*zoom/100)+'px');
-    byId('zoom-reset').textContent=Math.round(zoom)+'%';
-    byId('zoom-reset').setAttribute('aria-label','Zoom '+Math.round(zoom)+' percent. Fit to screen');
-    byId('zoom-out').disabled=zoom<=minimum;byId('zoom-in').disabled=zoom>=maximum;
+
+  // Edit the embedded JSON; it is example data, not architecture evidence.
+  const strategyData=JSON.parse(document.getElementById('strategy-data').textContent);
+  const svgNS='http://www.w3.org/2000/svg';
+  function element(tag,attributes={},text){
+    const node=document.createElementNS(svgNS,tag);
+    Object.entries(attributes).forEach(([key,value])=>node.setAttribute(key,String(value)));
+    if(text!==undefined) node.textContent=text;
+    return node;
   }
+  function add(parent,tag,attributes={},text){const node=element(tag,attributes,text);parent.appendChild(node);return node}
+  function text(parent,x,y,value,cls='',extra={}){return add(parent,'text',{x,y,...(cls?{class:cls}:{}),...extra},value)}
+  const map=document.getElementById('scene-strategy');
+  add(map,'style',{},`
+    .map-branch{transition:opacity .16s ease}.map-link{fill:none;stroke-width:3;stroke-linecap:round;opacity:.6}.map-leaf-link{fill:none;stroke-width:2;stroke-linecap:round;opacity:.5}.map-function-button{cursor:pointer}.map-function-box{fill:white;stroke-width:1.5;stroke-opacity:.5}.map-function-button:hover .map-function-box,.map-function-button:focus-visible .map-function-box{stroke-width:3;stroke-opacity:1}.map-function-button:focus-visible{outline:none}.map-title{font-size:21px;font-weight:750;fill:#26324d}.map-label{font-size:10px;font-weight:800;letter-spacing:1px;fill:#8a96ab}.map-body{font-size:16px;fill:#687992}.map-model{font-size:18px;font-weight:700;fill:#354967}.map-purpose{font-size:13.5px;fill:#7a8ba2}#scene-strategy[data-has-focus="true"] .map-branch[data-active="false"]{opacity:.22}.map-branch[data-active="true"] .map-link{opacity:1;stroke-width:5}.map-branch[data-active="true"] .map-function-box{stroke-width:3;stroke-opacity:1}.map-reset{cursor:pointer}.map-reset:focus-visible rect,.map-reset:hover rect{stroke:white;fill:#ffffff30}.map-reset:focus-visible{outline:none}@media(prefers-reduced-motion:reduce){.map-branch{transition:none}}
+  `);
+  const functions=strategyData.functions;
+  const names=Object.fromEntries(functions.map(item=>[item.id,item.title]));
+  const groups={left:functions.filter((item,i)=>(item.side|| (i%2?'right':'left'))==='left'),right:functions.filter((item,i)=>(item.side|| (i%2?'right':'left'))==='right')};
+  const boxHeight=item=>Math.max(156,112+22*(item.need.length+item.approach.length));
+  const leafHeight=item=>item.examples.length*58+Math.max(0,item.examples.length-1)*12;
+  const rowHeight=Math.ceil((Math.max(200,...functions.map(item=>Math.max(boxHeight(item),leafHeight(item))))+60)/10)*10;
+  const rows=Math.max(groups.left.length,groups.right.length,1);
+  const span=Math.max(0,rows-1)*rowHeight;
+  const centerY=Math.max(780,450+span/2),firstY=centerY-span/2;
+  const palette=['#7767c6','#5885bc','#8b72bb','#419a91','#4a9b83','#5a94b0'];
+  let bottom=centerY+530;
+  text(map,80,265,'FUNCTION → NEED & APPROACH → EXAMPLE CATEGORIES','smallcaps');
+  text(map,3520,265,'Select a function to highlight its branch.','tiny',{'text-anchor':'end'});
+  for(const side of ['left','right']) groups[side].forEach((item,index)=>{
+    const left=side==='left',count=groups[side].length;
+    const cy=count===1?centerY:firstY+index*span/(count-1);
+    const hubY=count===1?centerY:centerY-105+index*210/(count-1);
+    const fx=left?880:2200,lx=left?80:2820,height=boxHeight(item);
+    const color=palette[functions.indexOf(item)%palette.length];
+    const branch=add(map,'g',{class:'map-branch','data-map-branch':item.id,'data-active':'false',role:'group','aria-label':item.title+' branch'});
+    const rootX=left?1500:2100,nodePort=left?1400:2200;
+    add(branch,'path',{class:'map-link','data-association':'function',stroke:color,d:`M${rootX} ${hubY} C${rootX+(left?-45:45)} ${hubY} ${nodePort+(left?45:-45)} ${cy} ${nodePort} ${cy}`});
+    const top=cy-leafHeight(item)/2;
+    item.examples.forEach((model,i)=>{
+      const ly=top+i*70,my=ly+29,from=left?fx:fx+520,to=left?780:lx,mid=(from+to)/2;
+      add(branch,'path',{class:'map-leaf-link','data-association':'category',stroke:color,d:`M${from} ${cy} C${mid} ${cy} ${mid} ${my} ${to} ${my}`});
+      const leaf=add(branch,'g',{class:'map-leaf',transform:`translate(${lx} ${ly})`,role:'group','aria-label':model.name+': '+model.purpose});
+      add(leaf,'rect',{'data-leaf-box':'',width:700,height:58,rx:13,fill:'white',stroke:color,'stroke-opacity':.3,'stroke-width':1.3,filter:'url(#shadow)'});
+      add(leaf,'circle',{cx:22,cy:23,r:3.5,fill:color});
+      text(leaf,36,27,model.name,'map-model');text(leaf,36,47,model.purpose,'map-purpose');
+    });
+    const card=add(branch,'g',{id:'strategy-function-'+item.id,class:'map-function-button','data-strategy-function':item.id,transform:`translate(${fx} ${cy-height/2})`,role:'button',tabindex:0,'aria-label':'Highlight '+item.title,'aria-pressed':'false'});
+    add(card,'rect',{'data-function-box':'',width:520,height,rx:19,class:'map-function-box',stroke:color,filter:'url(#shadow)'});
+    add(card,'rect',{x:24,y:15,width:30,height:30,rx:9,fill:color,opacity:.12});
+    text(card,39,35,String(functions.indexOf(item)+1).padStart(2,'0'),'',{'text-anchor':'middle',style:`font-size:10px;font-weight:800;fill:${color}`});
+    text(card,66,36,item.title,'map-title');add(card,'line',{x1:24,y1:51,x2:496,y2:51,stroke:'#edf0f6'});
+    text(card,24,68,'NEED','map-label');item.need.forEach((line,i)=>text(card,24,88+i*22,line,'map-body'));
+    const approachY=95+item.need.length*22;
+    text(card,24,approachY,'APPROACH','map-label');item.approach.forEach((line,i)=>text(card,24,approachY+21+i*22,line,'map-body'));
+    bottom=Math.max(bottom,cy+Math.max(height,leafHeight(item))/2);
+  });
+  const tierTop=centerY-540,hubTop=centerY-150,evaluationTop=centerY+250;
+  add(map,'path',{d:`M1800 ${tierTop+310} V${hubTop} M1800 ${hubTop+300} V${evaluationTop}`,fill:'none',stroke:'#c5c2e4','stroke-width':2,'stroke-dasharray':'4 8'});
+  const tiers=add(map,'g',{role:'group','aria-label':'Example general-purpose tiers'});
+  add(tiers,'rect',{x:1530,y:tierTop,width:540,height:310,rx:22,fill:'#f1f0fc',stroke:'#dedcf0'});
+  text(tiers,1560,tierTop+37,'EXAMPLE GENERAL-PURPOSE TIERS','tag');
+  [['Light','Speed and efficiency'],['Balanced','Capability, responsiveness and cost'],['Advanced','Depth of reasoning']].forEach(([title,description],i)=>{text(tiers,1560,tierTop+82+i*75,title,'cardtitle',{style:'font-size:21px'});text(tiers,1560,tierTop+107+i*75,description,'body',{style:'font-size:15px'})});
+  const hub=add(map,'g',{id:'strategy-hub',role:'group','aria-label':'Example function-first selection strategy'});
+  add(hub,'rect',{x:1500,y:hubTop,width:600,height:300,rx:30,fill:'url(#violet)',filter:'url(#shadow)'});
+  text(hub,1800,hubTop+38,'FICTIONAL STRATEGY EXAMPLE','',{'text-anchor':'middle',style:'font-size:11px;font-weight:800;letter-spacing:2px;fill:#d8d4ff'});
+  text(hub,1800,hubTop+85,strategyData.center,'',{'text-anchor':'middle',style:'font-size:37px;font-weight:750;fill:white'});
+  ['Quality','Speed','Cost'].forEach((label,i)=>{const x=1540+i*180;add(hub,'rect',{x,y:hubTop+116,width:160,height:36,rx:18,fill:'#ffffff1c'});text(hub,x+80,hubTop+140,label,'',{'text-anchor':'middle',style:'font-size:15px;font-weight:700;fill:white'})});
+  text(hub,1800,hubTop+193,'One workflow can combine several models.','',{'text-anchor':'middle',style:'font-size:16px;fill:#e2dfff'});
+  text(hub,1800,hubTop+222,'Select a function to highlight its branch.','', {id:'strategy-focus-label','text-anchor':'middle',style:'font-size:14px;fill:#d8d4ff'});
+  const clear=add(hub,'g',{'data-map-reset':'',class:'map-reset',role:'button',tabindex:0,'aria-label':'Show all strategy branches'});
+  add(clear,'rect',{x:1700,y:hubTop+240,width:200,height:36,rx:18,fill:'#ffffff16',stroke:'#ffffff44'});
+  text(clear,1800,hubTop+263,'Show all branches','',{'text-anchor':'middle',style:'font-size:13px;font-weight:700;fill:white'});
+  add(map,'rect',{x:1540,y:evaluationTop,width:520,height:190,rx:21,fill:'#f1f5fa',stroke:'#e0e7ef'});
+  text(map,1570,evaluationTop+38,'Evaluate and evolve','cardtitle',{style:'font-size:21px'});
+  text(map,1570,evaluationTop+75,'Quality · response time · reliability','body',{style:'font-size:16px'});
+  text(map,1570,evaluationTop+104,'Total cost includes retries.','body',{style:'font-size:16px'});
+  text(map,1570,evaluationTop+147,'Adapt these example criteria to the actual task.','tiny',{style:'font-size:14px'});
+  text(map,1800,centerY+510,'SPECIALISTS ARE GROUPED BY FUNCTION','tag',{'text-anchor':'middle',style:'font-size:12px'});
+  text(map,1800,centerY+538,'Categories and assignments are fictional examples.','body',{'text-anchor':'middle',style:'font-size:15px'});
+  bottom=Math.max(bottom,centerY+550);
+  const strategyProfile={size:[3600,bottom+175,bottom+50-212],footerY:bottom+115,scenes:['scene-strategy'],title:'A function-first strategy mind map'};
+  const profiles={
+    overview:{size:[2000,940,630],footerY:900,scenes:['scene-overview'],title:'From sources to usable data'},
+    application:{size:[2900,940,630],footerY:900,scenes:['scene-overview','scene-application'],title:'A consumer connected to the existing system'},
+    analysis:{size:[2280,940,630],footerY:900,scenes:['scene-analysis'],title:'Compact parallel agents and shared results'},
+    strategy:strategyProfile
+  };
+
+  const minimum=10,maximum=200,step=25;
+  let zoom=100,fitMode=true,selectedView='overview';
+  const availableLayers=new Set(['telemetry','roles']);
+  let enabledLayers=new Set();
+  const out=document.getElementById('zoom-out');
+  const inside=document.getElementById('zoom-in');
+  const reset=document.getElementById('zoom-reset');
+  const surface=document.querySelector('main');
+  const diagram=document.getElementById('canvas');
+  const controls=document.querySelector('.zoom-controls');
+  const viewSelect=document.getElementById('view-select');
+  let queuedZoom=null,zoomFrame=0,touchPinch=null,safariPinch=null,touchCount=0;
+  let ignoreClickUntil=0,lastWheelUntil=0,lastSafariUntil=0;
+  let panRoom={left:0,top:0,right:0,bottom:0};
+  function viewportWidth(){return document.documentElement.clientWidth||window.innerWidth}
+  function viewportHeight(){return document.documentElement.clientHeight||window.innerHeight}
+  function baseWidth(){return Math.min(2500,Math.max(1900,viewportWidth()-80))}
+  const viewSizes=Object.fromEntries(Object.entries(profiles).map(([name,profile])=>[name,profile.size]));
+  function fitZoom(){
+    const availableWidth=Math.max(1,viewportWidth()-84);
+    const controlsHeight=controls.getBoundingClientRect().height;
+    const controlsBottom=parseFloat(getComputedStyle(controls).bottom)||12;
+    const availableHeight=Math.max(1,viewportHeight()-Math.max(94,36+controlsHeight+controlsBottom+16));
+    const [width,height]=viewSizes[selectedView];
+    const aspect=height/width;
+    return Math.min(100,availableWidth/baseWidth()*100,availableHeight/aspect/baseWidth()*100);
+  }
+  function render(){
+    if(fitMode) zoom=fitZoom();
+    document.documentElement.style.setProperty('--diagram-width',(baseWidth()*zoom/100)+'px');
+    reset.textContent=Math.round(zoom)+'%';
+    reset.setAttribute('aria-label','Zoom '+Math.round(zoom)+' percent. Fit diagram to screen');
+    out.disabled=zoom<=minimumZoom()+.01;
+    inside.disabled=zoom>=maximum-.01;
+  }
+  function minimumZoom(){return Math.min(minimum,fitZoom())}
+  function clampZoom(value){return Math.max(minimumZoom(),Math.min(maximum,value))}
+  function pointInDiagram(point){
+    const rect=diagram.getBoundingClientRect();
+    return {x:(point.x-rect.left)/rect.width,y:(point.y-rect.top)/rect.height};
+  }
+  function visibleCenter(){
+    const rect=diagram.getBoundingClientRect();
+    const left=Math.max(0,Math.min(viewportWidth(),rect.left));
+    const top=Math.max(0,Math.min(viewportHeight(),rect.top));
+    const right=Math.max(left,Math.min(viewportWidth(),rect.right));
+    const bottom=Math.max(top,Math.min(viewportHeight(),rect.bottom));
+    return {x:(left+right)/2,y:(top+bottom)/2};
+  }
+  function updatePanRoom(){
+    Object.entries(panRoom).forEach(([side,value])=>surface.style.setProperty('--pan-'+side,value+'px'));
+  }
+  function resetPanRoom(){
+    panRoom={left:0,top:0,right:0,bottom:0};updatePanRoom();
+  }
+  function applyZoomAt(value,point,anchor=pointInDiagram(point)){
+    fitMode=false;
+    surface.classList.add('is-manual');
+    zoom=clampZoom(value);
+    render();
+    const rect=diagram.getBoundingClientRect();
+    const baseLeft=rect.left+window.scrollX-panRoom.left;
+    const baseTop=rect.top+window.scrollY-panRoom.top;
+    const wantedLeft=point.x-rect.width*anchor.x;
+    const wantedTop=point.y-rect.height*anchor.y;
+    const scrollX=Math.max(0,baseLeft-wantedLeft);
+    const scrollY=Math.max(0,baseTop-wantedTop);
+    // A little document space lets even a short, wide diagram zoom around the
+    // user's focus. This remains one scrolling page, with no nested viewport.
+    panRoom={left:Math.max(0,wantedLeft-baseLeft),top:Math.max(0,wantedTop-baseTop),right:0,bottom:0};
+    updatePanRoom();
+    const card=document.querySelector('article').getBoundingClientRect();
+    const padding=getComputedStyle(surface);
+    const naturalRight=card.right+window.scrollX+parseFloat(padding.paddingRight);
+    const naturalBottom=card.bottom+window.scrollY+parseFloat(padding.paddingBottom);
+    panRoom.right=Math.max(0,Math.ceil(scrollX+viewportWidth()-naturalRight));
+    panRoom.bottom=Math.max(0,Math.ceil(scrollY+viewportHeight()-naturalBottom));
+    updatePanRoom();
+    window.scrollTo(scrollX,scrollY);
+  }
+  function cancelQueuedZoom(){
+    if(zoomFrame) cancelAnimationFrame(zoomFrame);
+    zoomFrame=0;queuedZoom=null;
+  }
+  function queueZoomAt(value,point,anchor=pointInDiagram(point)){
+    queuedZoom={value:clampZoom(value),point,anchor};
+    if(!zoomFrame) zoomFrame=requestAnimationFrame(()=>{
+      const update=queuedZoom;
+      zoomFrame=0;queuedZoom=null;
+      if(update) applyZoomAt(update.value,update.point,update.anchor);
+    });
+  }
+  function stopPinching(){
+    touchPinch=null;safariPinch=null;touchCount=0;lastWheelUntil=0;lastSafariUntil=0;ignoreClickUntil=0;
+    surface.classList.remove('is-pinching');
+  }
+  out.addEventListener('click',()=>{cancelQueuedZoom();applyZoomAt(zoom-step,visibleCenter())});
+  inside.addEventListener('click',()=>{cancelQueuedZoom();applyZoomAt(zoom+step,visibleCenter())});
+  reset.addEventListener('click',()=>{
+    cancelQueuedZoom();stopPinching();resetPanRoom();surface.classList.remove('is-manual');fitMode=true;render();window.scrollTo(0,0);
+  });
+  window.addEventListener('resize',()=>{cancelQueuedZoom();stopPinching();if(fitMode) render();else applyZoomAt(zoom,visibleCenter())});
+  // Trackpad pinch is exposed as Ctrl+wheel by standard wheel-event browsers.
+  // Ordinary wheel/two-finger scrolling keeps its native page-scroll behavior.
+  surface.addEventListener('wheel',event=>{
+    if(!event.ctrlKey||!Number.isFinite(event.deltaY)) return;
+    event.preventDefault();
+    if(touchCount||safariPinch||performance.now()<lastSafariUntil) return;
+    lastWheelUntil=performance.now()+180;
+    const unit=event.deltaMode===1?16:event.deltaMode===2?viewportHeight():1;
+    const delta=Math.max(-200,Math.min(200,event.deltaY*unit));
+    queueZoomAt((queuedZoom?.value??zoom)*Math.exp(-delta*.005),{x:event.clientX,y:event.clientY});
+  },{passive:false});
+  function touchMetrics(touches){
+    const a=touches[0],b=touches[1];
+    return {distance:Math.max(1,Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)),point:{x:(a.clientX+b.clientX)/2,y:(a.clientY+b.clientY)/2}};
+  }
+  function startTouchPinch(event){
+    const metrics=touchMetrics(event.touches);
+    touchPinch={ids:[event.touches[0].identifier,event.touches[1].identifier],distance:metrics.distance,anchor:pointInDiagram(metrics.point)};
+    safariPinch=null;
+    surface.classList.add('is-pinching');
+    ignoreClickUntil=performance.now()+400;
+  }
+  surface.addEventListener('touchstart',event=>{
+    touchCount=event.touches.length;
+    if(touchCount!==2) return;
+    if(event.cancelable) event.preventDefault();
+    startTouchPinch(event);
+  },{passive:false});
+  surface.addEventListener('touchmove',event=>{
+    touchCount=event.touches.length;
+    if(touchCount!==2) return;
+    if(event.cancelable) event.preventDefault();
+    if(!touchPinch||!touchPinch.ids.every(id=>Array.from(event.touches).some(touch=>touch.identifier===id))) startTouchPinch(event);
+    const metrics=touchMetrics(event.touches);
+    queueZoomAt((queuedZoom?.value??zoom)*metrics.distance/touchPinch.distance,metrics.point,touchPinch.anchor);
+    touchPinch.distance=metrics.distance;
+    ignoreClickUntil=performance.now()+400;
+  },{passive:false});
+  function endTouchPinch(event){
+    touchCount=event.touches.length;
+    if(touchCount===2) {startTouchPinch(event);return}
+    if(touchPinch) ignoreClickUntil=performance.now()+400;
+    touchPinch=null;
+    surface.classList.remove('is-pinching');
+  }
+  surface.addEventListener('touchend',endTouchPinch,{passive:true});
+  surface.addEventListener('touchcancel',event=>{
+    cancelQueuedZoom();stopPinching();touchCount=event.touches.length;
+    ignoreClickUntil=performance.now()+400;
+  },{passive:true});
+  surface.addEventListener('click',event=>{
+    if(performance.now()<ignoreClickUntil){event.preventDefault();event.stopPropagation()}
+  },true);
+  // Safari's gesture events provide a fallback for trackpads that do not send
+  // Ctrl+wheel. Screen touch sequences are handled above, exactly once.
+  function gesturePoint(event){
+    return Number.isFinite(event.clientX)&&Number.isFinite(event.clientY)?{x:event.clientX,y:event.clientY}:visibleCenter();
+  }
+  surface.addEventListener('gesturestart',event=>{
+    if(event.cancelable) event.preventDefault();
+    if(touchCount||performance.now()<lastWheelUntil) return;
+    const point=gesturePoint(event);
+    safariPinch={scale:Number.isFinite(event.scale)&&event.scale>0?event.scale:1,anchor:pointInDiagram(point)};
+  },{passive:false});
+  surface.addEventListener('gesturechange',event=>{
+    if(event.cancelable) event.preventDefault();
+    if(!safariPinch||touchCount||!Number.isFinite(event.scale)||event.scale<=0) return;
+    queueZoomAt((queuedZoom?.value??zoom)*event.scale/safariPinch.scale,gesturePoint(event),safariPinch.anchor);
+    safariPinch.scale=event.scale;
+  },{passive:false});
+  surface.addEventListener('gestureend',event=>{
+    if(event.cancelable) event.preventDefault();
+    if(safariPinch) lastSafariUntil=performance.now()+180;
+    safariPinch=null;
+  },{passive:false});
+  window.addEventListener('blur',()=>{cancelQueuedZoom();stopPinching()});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelQueuedZoom();stopPinching()}});
+
   function selectView(name){
-    if(!sizes[name]) return;
-    selected=name;
-    const [width,height]=sizes[name];
-    byId('canvas').setAttribute('viewBox','0 0 '+width+' '+height);
-    byId('page-bg').setAttribute('width',String(width));byId('page-bg').setAttribute('height',String(height));
-    for(const id of ['canvas-bg','canvas-dots']) byId(id).setAttribute('width',String(width-80));
-    byId('header-right').setAttribute('transform','translate('+(width-2000)+' 0)');
-    byId('header-divider').setAttribute('x2',String(width-70));
-    byId('canvas-title').textContent=titles[name];
-    byId('footer-marker').setAttribute('x',String(width-200));byId('footer-marker').textContent='EXAMPLE / '+name.toUpperCase();
-    byId('scene-overview').toggleAttribute('hidden',name==='analysis');
-    byId('scene-application').toggleAttribute('hidden',name!=='application');
-    byId('scene-analysis').toggleAttribute('hidden',name!=='analysis');
+    if(!Object.hasOwn(profiles,name)) return;
+    if(name!==selectedView){cancelQueuedZoom();stopPinching();resetPanRoom();window.scrollTo(0,0)}
+    selectedView=name;viewSelect.value=name;
+    const profile=profiles[name],isStrategy=name==='strategy';
+    document.getElementById('map-clear').toggleAttribute('hidden',!isStrategy);
+    document.querySelectorAll('[data-layer-toggle]').forEach(button=>button.toggleAttribute('hidden',isStrategy));
+    const [width,height,backgroundHeight]=profile.size;
+    diagram.setAttribute('viewBox','0 0 '+width+' '+height);
+    document.getElementById('page-bg').setAttribute('width',width);document.getElementById('page-bg').setAttribute('height',height);
+    for(const id of ['canvas-bg','canvas-dots']){document.getElementById(id).setAttribute('width',width-80);document.getElementById(id).setAttribute('height',backgroundHeight)}
+    document.getElementById('header-right').setAttribute('transform','translate('+(width-2000)+' 0)');
+    document.getElementById('header-divider').setAttribute('x2',width-70);
+    document.getElementById('canvas-eyebrow').textContent=isStrategy?'STRATEGY MIND MAP / FICTIONAL EXAMPLE':'ARCHITECTURE / FICTIONAL EXAMPLE';
+    document.getElementById('canvas-title').textContent=profile.title;
+    document.getElementById('canvas-subtitle').textContent=isStrategy?strategyData.note:'Illustrative components and connections. Replace them with evidence.';
+    document.getElementById('footer-note').setAttribute('y',profile.footerY);
+    document.getElementById('footer-marker').setAttribute('x',width-240);document.getElementById('footer-marker').setAttribute('y',profile.footerY);document.getElementById('footer-marker').textContent='EXAMPLE / '+name.toUpperCase();
+    for(const id of ['scene-overview','scene-application','scene-analysis','scene-strategy']) document.getElementById(id).toggleAttribute('hidden',!profile.scenes.includes(id));
     document.querySelectorAll('[data-view-button]').forEach(button=>{const active=button.getAttribute('data-view-button')===name;button.setAttribute('data-active',String(active));button.setAttribute('aria-pressed',String(active))});
     render();
   }
-  function readHash(){const name=window.location.hash.slice(1).toLowerCase();return sizes[name]?name:'overview'}
-  function navigate(name){if(!sizes[name])return;if(window.location.hash!=='#'+name)window.history.pushState(null,'','#'+name);selectView(name)}
-  function syncHash(){const name=readHash();if(name!==selected)selectView(name)}
+  function readHash(){
+    const [raw,query='']=window.location.hash.slice(1).split('?');
+    const value=(raw||'overview').toLowerCase();
+    return {view:Object.hasOwn(profiles,value)?value:'overview',layers:new Set((new URLSearchParams(query).get('layers')||'').split(',').filter(name=>availableLayers.has(name)))};
+  }
+  function routeHash(view,layers){const names=[...layers].filter(name=>availableLayers.has(name)).sort();return '#'+view+(names.length?'?layers='+names.join(','):'')}
+  function applyLayers(){
+    document.querySelectorAll('[data-layer]').forEach(node=>node.toggleAttribute('hidden',selectedView==='strategy'||!enabledLayers.has(node.getAttribute('data-layer'))));
+    document.querySelectorAll('[data-layer-toggle]').forEach(button=>{const name=button.getAttribute('data-layer-toggle');button.setAttribute('aria-pressed',String(enabledLayers.has(name)));button.disabled=selectedView==='strategy'});
+  }
+  function setRoute(view,layers,{replace=false}={}){
+    if(!Object.hasOwn(profiles,view)) return;
+    enabledLayers=new Set([...layers].filter(name=>availableLayers.has(name)));
+    const hash=routeHash(view,enabledLayers);
+    if(window.location.hash!==hash)window.history[replace?'replaceState':'pushState'](null,'',hash);
+    selectView(view);applyLayers();
+  }
+  function navigate(view){setRoute(view,enabledLayers)}
+  function syncHash(){const route=readHash();setRoute(route.view,route.layers,{replace:true})}
   document.querySelectorAll('[data-view-button]').forEach(button=>{const activate=()=>navigate(button.getAttribute('data-view-button'));button.addEventListener('click',activate);button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();activate()}})});
-  byId('zoom-out').addEventListener('click',()=>{fitMode=false;zoom=Math.max(minimum,zoom-step);render()});
-  byId('zoom-in').addEventListener('click',()=>{fitMode=false;zoom=Math.min(maximum,zoom+step);render()});
-  byId('zoom-reset').addEventListener('click',()=>{fitMode=true;render()});
-  window.addEventListener('resize',render);window.addEventListener('hashchange',syncHash);window.addEventListener('popstate',syncHash);
-  const initial=readHash();if(window.location.hash!=='#'+initial)window.history.replaceState(null,'','#'+initial);selectView(initial);
+  document.querySelectorAll('[data-layer-toggle]').forEach(button=>button.addEventListener('click',()=>{const name=button.getAttribute('data-layer-toggle'),next=new Set(enabledLayers);if(next.has(name))next.delete(name);else next.add(name);setRoute(selectedView,next)}));
+  let focused=null;
+  function focusBranch(id){
+    focused=Object.hasOwn(names,id)?id:null;
+    map.setAttribute('data-has-focus',String(Boolean(focused)));
+    document.querySelectorAll('[data-map-branch]').forEach(branch=>branch.setAttribute('data-active',String(branch.getAttribute('data-map-branch')===focused)));
+    document.querySelectorAll('[data-strategy-function]').forEach(button=>button.setAttribute('aria-pressed',String(button.getAttribute('data-strategy-function')===focused)));
+    document.getElementById('strategy-focus-label').textContent=focused?names[focused]:'Select a function to highlight its branch.';
+  }
+  document.querySelectorAll('[data-strategy-function]').forEach(button=>{const activate=()=>{const id=button.getAttribute('data-strategy-function');focusBranch(focused===id?null:id)};button.addEventListener('click',activate);button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();activate()}})});
+  document.getElementById('map-clear').addEventListener('click',()=>focusBranch(null));
+  document.querySelectorAll('[data-map-reset]').forEach(button=>{button.addEventListener('click',()=>focusBranch(null));button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();focusBranch(null)}})});
+  viewSelect.addEventListener('change',()=>navigate(viewSelect.value));
+  window.addEventListener('hashchange',syncHash);window.addEventListener('popstate',syncHash);
+  syncHash();
 })();
 </script></body></html>
