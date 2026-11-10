@@ -1,0 +1,458 @@
+{
+  "title": "A connected product ecosystem",
+  "subtitle": "Fictional example \u00b7 Trace entries through shared services to their destinations",
+  "width": 2700,
+  "height": 1900,
+  "nodes": [
+    {
+      "id": "portal",
+      "title": "Customer portal",
+      "role": "frontend",
+      "x": 100,
+      "y": 720,
+      "width": 350,
+      "height": 128,
+      "area": "Experience",
+      "description": "Customer entry point",
+      "details": [
+        "demo.portal"
+      ],
+      "evidence": [
+        "example:portal"
+      ]
+    },
+    {
+      "id": "documents",
+      "title": "Document intake",
+      "role": "frontend",
+      "x": 100,
+      "y": 440,
+      "width": 350,
+      "height": 128,
+      "area": "Knowledge",
+      "description": "Document upload interface",
+      "details": [
+        "demo.documents"
+      ],
+      "evidence": [
+        "example:documents"
+      ]
+    },
+    {
+      "id": "imports",
+      "title": "Content imports",
+      "role": "service",
+      "x": 100,
+      "y": 1010,
+      "width": 350,
+      "height": 128,
+      "area": "Knowledge",
+      "description": "Connector intake",
+      "details": [
+        "demo.imports"
+      ],
+      "evidence": [
+        "example:imports"
+      ]
+    },
+    {
+      "id": "orchestrator",
+      "title": "Conversation service",
+      "role": "service",
+      "x": 650,
+      "y": 720,
+      "width": 350,
+      "height": 128,
+      "area": "Application",
+      "description": "Coordinates requests and capabilities",
+      "details": [
+        "demo.orchestrator"
+      ],
+      "evidence": [
+        "example:orchestrator"
+      ]
+    },
+    {
+      "id": "indexer",
+      "title": "Indexing service",
+      "role": "service",
+      "x": 650,
+      "y": 450,
+      "width": 350,
+      "height": 128,
+      "area": "Knowledge",
+      "description": "Prepares searchable knowledge",
+      "details": [
+        "demo.indexer"
+      ],
+      "evidence": [
+        "example:indexer"
+      ]
+    },
+    {
+      "id": "records",
+      "title": "Knowledge records",
+      "role": "database",
+      "x": 1200,
+      "y": 420,
+      "width": 350,
+      "height": 128,
+      "area": "Data",
+      "description": "Relational knowledge store",
+      "details": [
+        "demo.records"
+      ],
+      "evidence": [
+        "example:records"
+      ]
+    },
+    {
+      "id": "vectors",
+      "title": "Search index",
+      "role": "database",
+      "x": 1200,
+      "y": 650,
+      "width": 350,
+      "height": 128,
+      "area": "Data",
+      "description": "Search representations",
+      "details": [
+        "demo.vectors"
+      ],
+      "evidence": [
+        "example:vectors"
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Tool access",
+      "role": "service",
+      "x": 1230,
+      "y": 970,
+      "width": 350,
+      "height": 128,
+      "area": "Application",
+      "description": "Access to supported capabilities",
+      "details": [
+        "demo.tools"
+      ],
+      "evidence": [
+        "example:tools"
+      ]
+    },
+    {
+      "id": "worker",
+      "title": "Workflow worker",
+      "role": "service",
+      "x": 1730,
+      "y": 830,
+      "width": 350,
+      "height": 128,
+      "area": "Application",
+      "description": "Performs background work",
+      "details": [
+        "demo.worker"
+      ],
+      "evidence": [
+        "example:worker"
+      ]
+    },
+    {
+      "id": "results",
+      "title": "Results store",
+      "role": "database",
+      "x": 2210,
+      "y": 800,
+      "width": 350,
+      "height": 128,
+      "area": "Data",
+      "description": "Application results",
+      "details": [
+        "demo.results"
+      ],
+      "evidence": [
+        "example:results"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review workspace",
+      "role": "frontend",
+      "x": 1570,
+      "y": 1270,
+      "width": 350,
+      "height": 128,
+      "area": "Experience",
+      "description": "Review and operations entry",
+      "details": [
+        "demo.review"
+      ],
+      "evidence": [
+        "example:review"
+      ]
+    },
+    {
+      "id": "review-api",
+      "title": "Review API",
+      "role": "service",
+      "x": 2110,
+      "y": 1170,
+      "width": 350,
+      "height": 128,
+      "area": "Application",
+      "description": "Reads results for the workspace",
+      "details": [
+        "demo.review.api"
+      ],
+      "evidence": [
+        "example:review-api"
+      ]
+    },
+    {
+      "id": "access",
+      "title": "Access console",
+      "role": "frontend",
+      "x": 100,
+      "y": 1440,
+      "width": 350,
+      "height": 128,
+      "area": "Experience",
+      "description": "Identity administration entry",
+      "details": [
+        "demo.access"
+      ],
+      "evidence": [
+        "example:access"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Identity service",
+      "role": "service",
+      "x": 700,
+      "y": 1390,
+      "width": 350,
+      "height": 128,
+      "area": "Shared",
+      "description": "Shared access management",
+      "details": [
+        "demo.identity"
+      ],
+      "evidence": [
+        "example:identity"
+      ]
+    },
+    {
+      "id": "identity-data",
+      "title": "Identity records",
+      "role": "database",
+      "x": 1250,
+      "y": 1570,
+      "width": 350,
+      "height": 128,
+      "area": "Data",
+      "description": "Identity application data",
+      "details": [
+        "demo.identity.data"
+      ],
+      "evidence": [
+        "example:identity-data"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "start": "documents",
+      "end": "indexer",
+      "evidence": [
+        "example:relationship-1"
+      ]
+    },
+    {
+      "id": "e2",
+      "start": "imports",
+      "end": "indexer",
+      "evidence": [
+        "example:relationship-2"
+      ],
+      "kind": "rabbit",
+      "via": [
+        "example-message-exchange"
+      ]
+    },
+    {
+      "id": "e3",
+      "start": "indexer",
+      "end": "records",
+      "evidence": [
+        "example:relationship-3"
+      ]
+    },
+    {
+      "id": "e4",
+      "start": "indexer",
+      "end": "vectors",
+      "evidence": [
+        "example:relationship-4"
+      ]
+    },
+    {
+      "id": "e5",
+      "start": "portal",
+      "end": "orchestrator",
+      "evidence": [
+        "example:relationship-5"
+      ]
+    },
+    {
+      "id": "e6",
+      "start": "orchestrator",
+      "end": "records",
+      "evidence": [
+        "example:relationship-6"
+      ]
+    },
+    {
+      "id": "e7",
+      "start": "orchestrator",
+      "end": "vectors",
+      "evidence": [
+        "example:relationship-7"
+      ]
+    },
+    {
+      "id": "e8",
+      "start": "orchestrator",
+      "end": "tools",
+      "evidence": [
+        "example:relationship-8"
+      ]
+    },
+    {
+      "id": "e9",
+      "start": "tools",
+      "end": "worker",
+      "evidence": [
+        "example:relationship-9"
+      ]
+    },
+    {
+      "id": "e10",
+      "start": "orchestrator",
+      "end": "worker",
+      "evidence": [
+        "example:relationship-10"
+      ],
+      "kind": "rabbit",
+      "via": [
+        "example-message-exchange"
+      ]
+    },
+    {
+      "id": "e11",
+      "start": "worker",
+      "end": "results",
+      "evidence": [
+        "example:relationship-11"
+      ]
+    },
+    {
+      "id": "e12",
+      "start": "review",
+      "end": "review-api",
+      "evidence": [
+        "example:relationship-12"
+      ]
+    },
+    {
+      "id": "e13",
+      "start": "review-api",
+      "end": "results",
+      "evidence": [
+        "example:relationship-13"
+      ]
+    },
+    {
+      "id": "e14",
+      "start": "review",
+      "end": "identity",
+      "evidence": [
+        "example:relationship-14"
+      ]
+    },
+    {
+      "id": "e15",
+      "start": "access",
+      "end": "identity",
+      "evidence": [
+        "example:relationship-15"
+      ]
+    },
+    {
+      "id": "e16",
+      "start": "orchestrator",
+      "end": "identity",
+      "evidence": [
+        "example:relationship-16"
+      ]
+    },
+    {
+      "id": "e17",
+      "start": "identity",
+      "end": "identity-data",
+      "evidence": [
+        "example:relationship-17"
+      ]
+    },
+    {
+      "id": "e18",
+      "start": "review-api",
+      "end": "identity",
+      "evidence": [
+        "example:relationship-18"
+      ]
+    }
+  ],
+  "journeys": {
+    "knowledge": {
+      "label": "Build knowledge",
+      "nodes": [
+        "documents",
+        "imports",
+        "indexer",
+        "records",
+        "vectors"
+      ]
+    },
+    "serve": {
+      "label": "Serve a request",
+      "nodes": [
+        "portal",
+        "orchestrator",
+        "records",
+        "vectors",
+        "tools",
+        "worker",
+        "results"
+      ]
+    },
+    "review": {
+      "label": "Review results",
+      "nodes": [
+        "review",
+        "review-api",
+        "results"
+      ]
+    },
+    "access": {
+      "label": "Manage access",
+      "nodes": [
+        "access",
+        "identity",
+        "identity-data"
+      ]
+    }
+  },
+  "notice": "Fictional example \u00b7 Replace the data with reviewed architecture evidence before sharing."
+}

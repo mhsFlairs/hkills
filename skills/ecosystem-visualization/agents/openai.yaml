@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ecosystem Visualization"
+  short_description: "Build connected ecosystem maps and metro canvases"
+  default_prompt: "Use $ecosystem-visualization to turn supplied architecture evidence into a connected metro-style ecosystem canvas with clear journeys and endpoints."

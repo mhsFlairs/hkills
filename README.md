@@ -7,7 +7,7 @@ This repository contains product-agnostic agent skills for research, reporting, 
 Install all skills with the [Skills CLI](https://skills.sh/):
 
 ```bash
-npx skills add mhsFlairs/hkills --skill comparative-research-analysis --skill branded-report-builder --skill architecture-visualization
+npx skills add mhsFlairs/hkills --skill comparative-research-analysis --skill branded-report-builder --skill architecture-visualization --skill ecosystem-visualization
 ```
 
 Install only one by using its skill name:
@@ -16,6 +16,7 @@ Install only one by using its skill name:
 npx skills add mhsFlairs/hkills --skill comparative-research-analysis
 npx skills add mhsFlairs/hkills --skill branded-report-builder
 npx skills add mhsFlairs/hkills --skill architecture-visualization
+npx skills add mhsFlairs/hkills --skill ecosystem-visualization
 ```
 
 ## Skills
@@ -23,3 +24,5 @@ npx skills add mhsFlairs/hkills --skill architecture-visualization
 - `comparative-research-analysis` — evidence-grounded comparisons, capability/readiness mapping, gap analysis, prioritization, and cautious timeline estimates.
 - `branded-report-builder` — clear, brand-aligned reports, including synchronized Markdown and HTML deliverables.
 - `architecture-visualization` — evidence-aware system diagrams and function-first strategy mind maps, with an offline starter, contextual layers, hash navigation and touch/trackpad zoom.
+
+- `ecosystem-visualization` — connected service maps and offline metro canvases with clear entries, shared interchanges, destinations, selectable journeys and function-specific animated routes.
