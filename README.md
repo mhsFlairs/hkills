@@ -28,4 +28,4 @@ npx skills add mhsFlairs/hkills --skill codex-efficient-subagents
 
 - `ecosystem-visualization` — connected service maps and offline metro canvases with clear entries, shared interchanges, destinations, selectable journeys and function-specific animated routes.
 
-- [`codex-efficient-subagents`](skills/codex-efficient-subagents/SKILL.md) — keeps the current main agent, uses parent/Sol planning and Terra execution where useful, delegates bounded work to capable cheaper models or lower effort, and verifies results. Avoids Astra subagents unless genuinely needed. Includes a dated model catalog, research sources, and evaluation guidance.
+- [`codex-efficient-subagents`](skills/codex-efficient-subagents/SKILL.md) — keeps the current main agent, uses parent/Sol planning and Terra execution where useful, and prefers Luna for routine Git, transcription, PowerShell, and search/evidence workflows. Routes complex merges and difficult decisions to adequate stronger reasoning, verifies results, and avoids Astra subagents unless genuinely needed. Includes a dated model catalog, research sources, and evaluation guidance.

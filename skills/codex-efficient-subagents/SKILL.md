@@ -1,6 +1,6 @@
 ---
 name: codex-efficient-subagents
-description: "Keep the current main agent and route bounded Codex work by phase: use strong reasoning for difficult plans, then capable cheaper models for execution. Use for cost-aware subagents, parallel exploration, or multi-part implementation. Prefer lower effort where adequate; avoid Astra subagents unless necessary."
+description: "Keep the current main agent and route bounded Codex work by phase, using Luna for suitable execution and evidence collection and stronger reasoning for difficult plans. Use for cost-aware subagents, Git/transcription/shell workflows, search, or multi-part implementation. Prefer lower effort where adequate; avoid Astra subagents unless necessary."
 ---
 
 # Codex Efficient Subagents
@@ -34,11 +34,24 @@ Use the current parent to plan when it already has the needed reasoning and cont
 - Concrete acceptance checks and expected outcomes, including important failure cases.
 - Remaining assumptions or open decisions, clearly separated from settled instructions.
 
-The parent checks that the plan is ready to execute, then gives Terra the plan and necessary source context at the lowest adequate effort, typically low or medium. Use Luna or direct tools for sufficiently mechanical portions. Creating this handoff does not require another user approval when the work is already authorized. The executor should report contradictions, missing prerequisites, or an unresolved design decision instead of guessing or silently redesigning the solution.
+The parent checks that the plan is ready to execute, then gives Terra the plan and necessary source context at the lowest adequate effort, typically low or medium. Prefer Luna for the bounded operational and evidence-gathering workflows below as well as mechanical portions; use direct tools when no separate worker is useful. Creating this handoff does not require another user approval when the work is already authorized. The executor should report contradictions, missing prerequisites, or an unresolved design decision instead of guessing or silently redesigning the solution.
 
 A written plan does not make every implementation safe to downgrade. Keep an inseparable security/concurrency-sensitive slice with Sol or the adequate parent when implementation still requires difficult judgment or lacks reliable checks; delegate the separable routine portions. Reserve further Sol work for those decisions, focused review of material risks, or evidence-based escalation. Routine documentation and running established checks need not use the planner's model or effort; designing missing checks may still require stronger reasoning.
 
 Reassess model and effort at the planning-to-execution handoff. A Sol planner does not imply a Sol implementer, and an agent's own earlier conservative choice is not an explicit user requirement to keep that configuration. Honor actual user model constraints. The parent dispatches the executor with fresh context; do not ask the planner to spawn descendants or pretend a follow-up changes its model. Skip a separate planning agent when a suitable plan already exists or the handoff costs more than it saves.
+
+## Use Luna for bounded execution and evidence gathering
+
+Treat Luna as a capable tool-using worker that can own a complete bounded workflow. Prefer it for the following work when delegation is worthwhile and the required tools are available:
+
+| Work | Luna assignment and handoff |
+| --- | --- |
+| Routine Git operations | Inspect status/diffs, manage branches, commit, fetch, pull/push, and handle straightforward merges within the existing authorization. Return the resulting branch/commit/status. Hand large or complex merges, conflict-heavy rebases, and semantic conflict resolution to the adequate parent or Sol. |
+| Transcription | Run the applicable transcription skill/tool workflow, save the transcript, and return its location with available timestamps/speaker labels and uncertain passages marked. Do not invent inaudible content or assume native audio support; route difficult interpretation separately when needed. |
+| PowerShell execution | Run well-scoped commands or scripts, inspect exit codes and relevant output, and report results/artifact paths. Follow existing permissions and filesystem rules. Escalate unresolved operational decisions or complex script design, rather than upgrading every command-running task. |
+| Search and evidence collection | Search the repository, web, or connected sources as appropriate; write concise evidence notes with source URLs or file/line references, relevant dates, findings, and gaps. The parent or another suitable model reviews that evidence and produces the synthesis or decision. Avoid repeating the entire search with a stronger model when targeted verification suffices. |
+
+Start at low effort for straightforward execution and medium for multi-step work or bounded judgment; use high only for concrete edge cases or reasoning needs. Choose by the actual uncertainty and checks, not merely the presence of Git, a shell, audio, or a search tool. Missing tools or access are prerequisites to resolve, not evidence that a larger model is required. A single easy command can still be run inline. The evidence reviewer may be the existing main agent; a separate reviewer is not mandatory.
 
 ## Choose the model and effort
 
@@ -50,7 +63,7 @@ The table below describes worker starting points; the main agent remains the cur
 
 | Work characteristics | Starting route | Acceptance evidence |
 | --- | --- | --- |
-| Large but mechanical scan, extraction, known-pattern change; explicit boundaries and direct checks | Luna: low for extraction, medium for bounded reasoning, high for code/tool work with edge cases | Exact sources, schema checks, diff, targeted tests |
+| Routine Git, transcription workflows, PowerShell execution, search/evidence collection, extraction, or known-pattern changes with clear scope | Luna: low for straightforward execution, medium for multi-step work, high for concrete reasoning needs | Command results, repository state, transcript artifacts/uncertainties, cited evidence, or targeted checks |
 | Scoped implementation from a concrete plan or established patterns, documentation from supplied material, visual inspection with a defined outcome | Terra: low or medium | Behavior check, source fidelity, or inspected UI result |
 | Unresolved design decisions, unknown bug cause, interacting components, concurrency, subtle review, weak verification or costly rework | Sol: medium; high for competing hypotheses or coupled constraints; reassess execution after planning | Reproducer, targeted regression checks, justified findings |
 | A concrete capability need cannot be met by cheaper candidates, and separate execution is warranted instead of parent handling | Astra exception: lowest adequate supported effort; match the main effort only when required | Reason for the exception, explicit decision criteria, counterexamples, independent checks where useful |

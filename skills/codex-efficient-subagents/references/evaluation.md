@@ -17,8 +17,13 @@ Give an independent agent SKILL.md, models.md, the current runtime contract, and
 | Subtask genuinely needs the same model and effort as its parent | Matching child is eligible with a compact fresh-context packet, subject to the Astra exception; do not invent savings |
 | Parent effort is not exposed | Choose adequate supported worker effort; do not assert it is lower than the parent's |
 | Large repeatable inventory with a precise schema; direct tooling can extract it | Use the deterministic tool, not an LLM classification service |
+| Substantial routine Git work with authorized commit/push and a straightforward merge | Luna is a preferred candidate; verify branch, commit and final repository state |
+| Large or complex merge with semantic conflicts | Adequate parent or Sol resolves it; do not force Luna to continue because routine Git is eligible |
+| Recording needs transcription using an available workflow | Luna can operate the skill/tool and return a transcript with available timestamps and uncertainty markers; do not assume native audio capability |
+| Bounded multi-command PowerShell workflow with known inputs and expected outputs | Luna is eligible at low/medium effort; verify outputs and exit codes, retaining existing permissions |
+| Broad search task needs evidence collected before another model synthesizes | Luna searches and writes traceable findings; parent or suitable reviewer checks evidence and synthesizes without repeating the whole search |
 | Substantial bounded implementation with a known design and regression check; parent has separate integration work | Adequate lower-model candidate, complete packet, explicit model/effort, no full-history override |
-| Several workstreams each mix hard state/security decisions with routine implementation and docs | Consider parent/Sol planning, Terra execution, and Luna/direct-tool mechanical work; no blanket Sol/high solely because each workstream contains risk |
+| Several workstreams each mix hard state/security decisions with routine implementation and docs | Consider parent/Sol planning, Terra execution, and Luna operational/evidence work or direct tools; no blanket Sol/high solely because each workstream contains risk |
 | Sol has settled interfaces, invariants, failure cases, and reliable acceptance checks | Reassess execution for Terra at adequate effort; transfer the concrete plan and source context through the parent |
 | Parent already has an executable plan | No duplicate planning agent; route implementation directly |
 | Plan leaves ownership or cancellation behavior unresolved | Resolve those decisions before handing off affected work; executor must not invent them |
