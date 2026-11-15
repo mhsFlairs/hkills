@@ -1,13 +1,13 @@
 # Reusable agent skills
 
-This repository contains product-agnostic agent skills for research, reporting, and architecture visualization.
+This repository contains reusable agent skills for research, reporting, architecture visualization, and cost-aware Codex subagent delegation.
 
 ## Install
 
 Install all skills with the [Skills CLI](https://skills.sh/):
 
 ```bash
-npx skills add mhsFlairs/hkills --skill comparative-research-analysis --skill branded-report-builder --skill architecture-visualization --skill ecosystem-visualization
+npx skills add mhsFlairs/hkills --skill comparative-research-analysis --skill branded-report-builder --skill architecture-visualization --skill ecosystem-visualization --skill codex-efficient-subagents
 ```
 
 Install only one by using its skill name:
@@ -17,6 +17,7 @@ npx skills add mhsFlairs/hkills --skill comparative-research-analysis
 npx skills add mhsFlairs/hkills --skill branded-report-builder
 npx skills add mhsFlairs/hkills --skill architecture-visualization
 npx skills add mhsFlairs/hkills --skill ecosystem-visualization
+npx skills add mhsFlairs/hkills --skill codex-efficient-subagents
 ```
 
 ## Skills
@@ -26,3 +27,5 @@ npx skills add mhsFlairs/hkills --skill ecosystem-visualization
 - `architecture-visualization` — evidence-aware system diagrams and function-first strategy mind maps, with an offline starter, contextual layers, hash navigation and touch/trackpad zoom.
 
 - `ecosystem-visualization` — connected service maps and offline metro canvases with clear entries, shared interchanges, destinations, selectable journeys and function-specific animated routes.
+
+- [`codex-efficient-subagents`](skills/codex-efficient-subagents/SKILL.md) — keeps the current main agent, delegates bounded work to capable cheaper models or lower effort, verifies results, and avoids Astra subagents unless genuinely needed. Includes a dated model catalog, research sources, and evaluation guidance.

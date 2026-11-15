@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Efficient Subagents"
+  short_description: "Delegate with cheaper models or lower reasoning effort"
+  default_prompt: "Use $codex-efficient-subagents to keep the current main agent, delegate suitable work to cheaper models or lower effort, and avoid Astra subagents unless genuinely needed."
