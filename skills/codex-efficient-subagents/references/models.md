@@ -1,6 +1,6 @@
 # Current routing candidates
 
-Verified on 2026-11-15. This is a dated snapshot, not an evergreen model resolver.
+Verified on 2026-11-16. This is a dated snapshot, not an evergreen model resolver.
 
 | Family | Latest verified model ID | Efforts advertised by this Codex session's spawn tool | Standard API input / output USD per 1M tokens |
 | --- | --- | --- | --- |

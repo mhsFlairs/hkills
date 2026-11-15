@@ -45,7 +45,7 @@ Reviewed as design evidence; no third-party code, install scripts, or prompts we
 
 | Project | Useful idea | Adaptation in this skill |
 | --- | --- | --- |
-| [peterjohannmedina/codex-model-routing](https://github.com/peterjohannmedina/codex-model-routing/blob/main/SKILL.md) | Counts context transfer and coordination in routing decisions | Benefit gate and compact packets; omit its broader provider/dashboard and conservation-mode machinery |
+| [peterjohannmedina/codex-model-routing](https://github.com/peterjohannmedina/codex-model-routing/blob/main/SKILL.md) | Counts context transfer and coordination in routing decisions | Compact packets; current routing favors delegating even trivial routine work when a suitable lower route exists; omit its broader provider/dashboard and conservation-mode machinery |
 | [Rattlhead/task-model-router](https://github.com/Rattlhead/codex-agent-skills/blob/main/skills/task-model-router/SKILL.md) | Distinguishes supported model overrides, costs through acceptance, and pricing units | Runtime eligibility checks and honest accounting; no credit-to-dollar assumptions |
 | [LAwLi3tCoding/codex-subagent-router](https://github.com/LAwLi3tCoding/codex-subagent-router) | Separates model choice from permission/decision to spawn; uses problem structure to choose effort | Separate delegation and routing gates; unlike its Sol-first automatic policy, admit Luna/Terra for verifiable bounded work |
 | [IonDen/subagent-optimizer](https://raw.githubusercontent.com/IonDen/skills/main/plugins/ionden-skills/skills/subagent-optimizer/SKILL.md) | Reduces startup instructions and checks platform-specific agent definitions | Short entrypoint and on-demand references; use the actual Codex tool schema |

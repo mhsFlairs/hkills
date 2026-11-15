@@ -8,7 +8,7 @@ Give an independent agent SKILL.md, models.md, the current runtime contract, and
 
 | Scenario | Observable acceptance |
 | --- | --- |
-| A single known typo in an already-open file | Inline edit, no agent |
+| A single known typo in an already-open file with a strong parent | Delegate the bounded edit to an adequate cheaper or same-model/lower-effort worker |
 | Routing is applied to a substantial multi-part task | Treat the current model as the main agent; do not select or recommend a replacement coordinator |
 | Existing main agent is Sol with an explicit user-selected effort | Preserve the active main settings and still look for useful cheaper-model or lower-effort delegation |
 | Astra/high parent has a bounded task that Sol can adequately handle | Prefer Sol; Astra/medium is not justified merely because its effort is lower |
@@ -16,14 +16,14 @@ Give an independent agent SKILL.md, models.md, the current runtime contract, and
 | Separate work genuinely needs Astra and cheaper candidates cannot meet acceptance | Astra child is eligible with a concrete capability reason and justification for separate execution; no mandatory failed cheap attempt |
 | Subtask genuinely needs the same model and effort as its parent | Matching child is eligible with a compact fresh-context packet, subject to the Astra exception; do not invent savings |
 | Parent effort is not exposed | Choose adequate supported worker effort; do not assert it is lower than the parent's |
-| Large repeatable inventory with a precise schema; direct tooling can extract it | Use the deterministic tool, not an LLM classification service |
-| Substantial routine Git work with authorized commit/push and a straightforward merge | Luna is a preferred candidate; verify branch, commit and final repository state |
+| Large repeatable inventory with a precise schema; direct tooling can extract it | Delegate the bounded workflow to a suitable worker; the worker uses the deterministic tool, not an LLM classification service |
+| Sol receives an authorized routine commit-and-push request | Bundle inspection, staging, commit, push, and reporting in one Luna low-effort worker packet; use Luna medium or Terra low/medium for bounded judgment; verify branch, commit, push, and final state |
 | Large or complex merge with semantic conflicts | Adequate parent or Sol resolves it; do not force Luna to continue because routine Git is eligible |
 | Recording needs transcription using an available workflow | Luna can operate the skill/tool and return a transcript with available timestamps and uncertainty markers; do not assume native audio capability |
 | Bounded multi-command PowerShell workflow with known inputs and expected outputs | Luna is eligible at low/medium effort; verify outputs and exit codes, retaining existing permissions |
 | Broad search task needs evidence collected before another model synthesizes | Luna searches and writes traceable findings; parent or suitable reviewer checks evidence and synthesizes without repeating the whole search |
 | Substantial bounded implementation with a known design and regression check; parent has separate integration work | Adequate lower-model candidate, complete packet, explicit model/effort, no full-history override |
-| Several workstreams each mix hard state/security decisions with routine implementation and docs | Consider parent/Sol planning, Terra execution, and Luna operational/evidence work or direct tools; no blanket Sol/high solely because each workstream contains risk |
+| Several workstreams each mix hard state/security decisions with routine implementation and docs | Consider parent/Sol planning, Terra execution, and Luna operational/evidence work; workers may use direct tools for mechanical steps; no blanket Sol/high solely because each workstream contains risk |
 | Sol has settled interfaces, invariants, failure cases, and reliable acceptance checks | Reassess execution for Terra at adequate effort; transfer the concrete plan and source context through the parent |
 | Parent already has an executable plan | No duplicate planning agent; route implementation directly |
 | Plan leaves ownership or cancellation behavior unresolved | Resolve those decisions before handing off affected work; executor must not invent them |
@@ -34,8 +34,11 @@ Give an independent agent SKILL.md, models.md, the current runtime contract, and
 | Intermittent cross-service state bug | Sol or parent investigation; no blind cheap-tier sequence |
 | Missing credentials or inaccessible required data | Report/recover the missing prerequisite; no capability escalation as a substitute |
 | Latest family release absent from spawn schema | Another adequate current family or inline; no predecessor fallback |
-| User specifies model and/or effort | Preserve each explicit supported component; do not silently replace |
-| Supported model overrides unavailable; inherited parent is expensive | Inline or disclosed inherited execution; no claim of cheaper routing |
+| User specifies a worker model and/or effort | Preserve each explicit supported worker setting; do not treat it as a request to avoid delegation |
+| User explicitly requests inline work or forbids delegation | Respect the instruction; do not delegate |
+| No suitable worker route: overrides unavailable with expensive inheritance, no access/capacity, or parent already cheapest adequate at lowest effort | Continue inline when authorized, briefly disclose material limitation, and make no claim of cheaper routing or create a pointless duplicate |
+| A bounded worker receives its packet | Execute the packet and return to parent; no descendant agents |
+| Trivial bounded work has a suitable cheaper or lower-effort route | Delegate; task brevity, deterministic tools, and hypothetical startup overhead are not routine inline excuses |
 | Reused child needs a different model | New eligible child or parent takeover; no pretend reconfiguration through a message |
 | Two tasks need to edit the same file | Serialize or restructure ownership |
 | Failed acceptance after one targeted repair | Reassess/take over or report blocker; no open-ended retries |
@@ -58,16 +61,18 @@ For an applicable API tariff, calculate each disjoint token category at its actu
 
 Only report savings when accepted comparable work has a measured baseline: `(baseline_total - routed_total) / baseline_total`. Also report acceptance rate and sample size. A cheaper failed result is not an improvement.
 
-## Initial validation record: 2026-11-15
+## Initial validation record: 2026-11-15 (historical)
+
+The initial inline typo and direct-script inventory decisions recorded below are superseded by the 2026-11-16 policy. They are historical outcomes, not current guidance or proof that trivial work should stay inline.
 
 - Skill creator's `quick_validate.py` passed. Local reference links and UI metadata passed checks. A scan of the package found only the four current model IDs in models.md. No unfinished scaffold remains.
 - Independent decision test: native dispatch requested Terra 6.1 / medium with `fork_turns: "none"`. The agent received SKILL.md, models.md, and 12 scenarios, without this rubric or the research conclusions. Parent review accepted all 12 decisions: inline typo; direct inventory script; Luna/high bounded parser task; Terra/low scoped UI task; Sol/high concurrency analysis; missing-input recovery; unavailable-latest-family exclusion; explicit Terra/high preservation; inline work without override support; fresh dispatch for a changed model; serialization of overlapping edits; and no unenforceable budget promise.
 - Live worker test: native dispatch requested Luna 6 / high with fresh context. In isolated temporary space, the worker could edit only a small Python batching helper, with fixed tests covering remainder handling, oversized/exact/single batches, empty inputs, iterators, input preservation, and invalid sizes. Before dispatch, the suite reported five failures and three errors across seven test methods and their subtests. After the worker's edit, the parent inspected the implementation and independently ran all seven tests successfully. No repair dispatch was required.
 - Both native requests were accepted and completed. The exposed tools returned no effective-model/effort metadata or per-agent billing counters. Therefore effective model identity and monetary savings remain unverified. This is a small operational smoke test and decision evaluation, not a representative quality or cost benchmark. Sol/Astra live execution, future catalog refresh, and hard-budget enforcement were not tested.
 
-## Delegation preference correction: 2026-11-15
+## Delegation preference correction: 2026-11-15 (superseded by 2026-11-16 policy)
 
-The main agent remains whichever model the user is speaking with. Every main model should seek useful cheaper-model or same-model/lower-effort delegation, while avoiding Astra subagents wherever possible. Matching model and effort is allowed when genuinely needed; Astra additionally requires a concrete capability need and justified separate execution, or an explicit user request. The skill, discovery instructions, UI metadata, and scenarios reflect this corrected preference. This narrow instruction edit was reviewed inline; the initial live smoke test above was not rerun and does not validate cost savings for these preferences.
+The main agent remains whichever model the user is speaking with. Every main model should seek useful cheaper-model or same-model/lower-effort delegation, while avoiding Astra subagents wherever possible. Matching model and effort is allowed when genuinely needed; Astra additionally requires a concrete capability need and justified separate execution, or an explicit user request. The skill, discovery instructions, UI metadata, and scenarios reflect this corrected preference. This historical edit was reviewed inline; its decisions above were not rerun and do not validate the 2026-11-16 policy or measured savings.
 
 ## Phase routing validation: 2026-11-15
 

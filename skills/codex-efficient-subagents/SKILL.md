@@ -1,27 +1,29 @@
 ---
 name: codex-efficient-subagents
-description: "Keep the current main agent and route bounded Codex work by phase, using Luna for suitable execution and evidence collection and stronger reasoning for difficult plans. Use for cost-aware subagents, Git/transcription/shell workflows, search, or multi-part implementation. Prefer lower effort where adequate; avoid Astra subagents unless necessary."
+description: "Keep the current main agent and delegate trivial and routine Codex execution to an adequate cheaper model or lower-effort worker. Use for routine Git, transcription, shell, search, and bounded implementation; avoid Astra subagents unless necessary."
 ---
 
 # Codex Efficient Subagents
 
-Use the least costly adequate route through acceptance. Keep the current main model responsible for task framing, integration, and final judgment. This skill explicitly requests bounded subagent delegation and model/effort overrides when the gates below pass; it does not require agents for every task.
+Use the least costly adequate route through acceptance. Keep the current main model responsible for task framing, integration, and final judgment. This skill explicitly requests bounded subagent delegation and model/effort overrides, including for trivial and routine execution when a suitable route is available.
 
 ## Main agent and delegation preference
 
 The main agent is whichever model the user is currently speaking with. Keep that model and its selected effort; this skill does not choose, recommend replacing, or switch the coordinator. Keep responsibility for planning, task decomposition, integration, and final acceptance with the current main agent, even when it delegates a bounded planning task.
 
-Whatever model is currently the main agent, actively look for useful bounded delegation at task entry and meaningful phase boundaries. Prefer an adequate cheaper model or the same model at lower reasoning effort. These are alternative ways to reduce worker cost, not a mandatory sequence of attempts. Use the same model and effort as the main agent when the subtask genuinely needs that capability; a fresh, focused context can still help even without a model-price reduction. Explain that benefit as context isolation or parallelism, not guaranteed savings. A child may also be stronger than the main agent when the work requires it.
+Whatever model is currently the main agent, briefly classify work before execution and delegate trivial or routine bounded execution when an adequate cheaper model or same-model/lower-effort route is supported. This applies when the main agent is Luna at higher effort too. Task brevity, deterministic tools, and hypothetical startup overhead are not routine reasons to keep work inline. Bundle the request's routine steps into one worker packet. For example, a Sol main agent receiving an authorized commit-and-push request routes straightforward operations to Luna low, or Luna medium/Terra low-medium when bounded judgment warrants it. The parent retains scope and routing, consequential decisions, verification, and user communication; do not create a separate classifier or planner for an easy task.
+
+Use the same model and effort as the main agent only when the work genuinely needs that capability and no adequate cheaper or lower-effort route fits; a fresh context can help but does not itself reduce cost. If the parent's effective effort is unknown, select an adequate supported effort without claiming it is lower. A lower effort alone never justifies an Astra child.
 
 Avoid spawning Astra subagents wherever possible, including when the main agent is Astra and a lower-effort Astra child would be available. Prefer adequate Luna, Terra, or Sol workers; if the main agent is Astra, keep the work requiring Astra with it when practical. An Astra child is an exception: identify the concrete capability need that cheaper candidates cannot meet and why separate execution is warranted instead of parent handling. Context isolation or lower effort alone does not justify an Astra child. Do not require a failed cheaper attempt when its inadequacy is already clear. Honor an explicit user request for an Astra subagent.
 
 ## Decide whether to delegate
 
-Define the result and how it will be checked before assigning work. Delegate a coherent unit when its reading, implementation, or independent analysis can repay the cost of the task packet, child startup, review, and possible repair. Parallelism may improve latency while increasing total cost; distinguish those benefits.
+Define the result and how it will be checked before assigning work. Bundle all routine steps for one request into one worker, including inspection, authorized edits, staging, commit, push, and reporting when requested and authorized. The worker should use deterministic tools for repeatable extraction and transformation.
 
-Keep a tiny edit, a single tool lookup, work already nearly finished, or work needing most of the parent's evolving context inline. Use a deterministic tool directly for straightforward extraction or transformation. Do not create an agent just to choose a model. Bundle related mechanical work rather than spawning per file.
+Keep work inline only when the user requests inline work or forbids delegation; runtime lacks a suitable model, effort, or required tool access; worker capacity is unavailable; the current main is already the cheapest adequate model at its lowest supported effort; or work genuinely cannot be separated from evolving parent reasoning. Honor an explicit worker model/effort choice when supported; it is not an instruction to avoid delegation. If no suitable route exists, continue inline when authorized, briefly disclose a material limitation, and do not stall or create a pointless same-cost duplicate. Preserve authorization boundaries; delegation does not authorize destructive Git actions. Keep tightly coupled hard reasoning with the parent or adequate stronger reasoning.
 
-The parent should have useful coordination/integration work or avoid substantial noisy context by delegating. It must not duplicate the child's investigation. Ask about genuinely missing requirements while continuing independent work; a more expensive model cannot resolve missing access or user intent.
+The parent owns scope, routing, consequential decisions, verification, and user communication. A bounded worker executes only its assigned packet and returns to the parent; it must not recursively delegate. The parent may reassess or escalate after reviewing results. Do not create a separate classifier or planner for an easy task.
 
 ## Separate difficult decisions from execution
 
@@ -34,7 +36,7 @@ Use the current parent to plan when it already has the needed reasoning and cont
 - Concrete acceptance checks and expected outcomes, including important failure cases.
 - Remaining assumptions or open decisions, clearly separated from settled instructions.
 
-The parent checks that the plan is ready to execute, then gives Terra the plan and necessary source context at the lowest adequate effort, typically low or medium. Prefer Luna for the bounded operational and evidence-gathering workflows below as well as mechanical portions; use direct tools when no separate worker is useful. Creating this handoff does not require another user approval when the work is already authorized. The executor should report contradictions, missing prerequisites, or an unresolved design decision instead of guessing or silently redesigning the solution.
+The parent checks that the plan is ready to execute, then gives Terra the plan and necessary source context at the lowest adequate effort, typically low or medium. Prefer Luna for the bounded operational and evidence-gathering workflows below as well as mechanical portions. Workers should use deterministic tools where they fit. Creating this handoff does not require another user approval when the work is already authorized. The executor should report contradictions, missing prerequisites, or an unresolved design decision instead of guessing or silently redesigning the solution.
 
 A written plan does not make every implementation safe to downgrade. Keep an inseparable security/concurrency-sensitive slice with Sol or the adequate parent when implementation still requires difficult judgment or lacks reliable checks; delegate the separable routine portions. Reserve further Sol work for those decisions, focused review of material risks, or evidence-based escalation. Routine documentation and running established checks need not use the planner's model or effort; designing missing checks may still require stronger reasoning.
 
@@ -42,7 +44,7 @@ Reassess model and effort at the planning-to-execution handoff. A Sol planner do
 
 ## Use Luna for bounded execution and evidence gathering
 
-Treat Luna as a capable tool-using worker that can own a complete bounded workflow. Prefer it for the following work when delegation is worthwhile and the required tools are available:
+Treat Luna as a capable tool-using worker that can own a complete bounded workflow. Prefer it for the following work when its supported model/effort is adequate and required tools are available:
 
 | Work | Luna assignment and handoff |
 | --- | --- |
@@ -51,7 +53,7 @@ Treat Luna as a capable tool-using worker that can own a complete bounded workfl
 | PowerShell execution | Run well-scoped commands or scripts, inspect exit codes and relevant output, and report results/artifact paths. Follow existing permissions and filesystem rules. Escalate unresolved operational decisions or complex script design, rather than upgrading every command-running task. |
 | Search and evidence collection | Search the repository, web, or connected sources as appropriate; write concise evidence notes with source URLs or file/line references, relevant dates, findings, and gaps. The parent or another suitable model reviews that evidence and produces the synthesis or decision. Avoid repeating the entire search with a stronger model when targeted verification suffices. |
 
-Start at low effort for straightforward execution and medium for multi-step work or bounded judgment; use high only for concrete edge cases or reasoning needs. Choose by the actual uncertainty and checks, not merely the presence of Git, a shell, audio, or a search tool. Missing tools or access are prerequisites to resolve, not evidence that a larger model is required. A single easy command can still be run inline. The evidence reviewer may be the existing main agent; a separate reviewer is not mandatory.
+Start at low effort for straightforward execution and medium for multi-step work or bounded judgment; use high only for concrete edge cases or reasoning needs. Choose by the actual uncertainty and checks, not merely the presence of Git, a shell, audio, or a search tool. Missing tools or access are prerequisites to resolve, not evidence that a larger model is required. The evidence reviewer may be the existing main agent; a separate reviewer is not mandatory.
 
 ## Choose the model and effort
 
