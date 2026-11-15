@@ -18,6 +18,13 @@ Give an independent agent SKILL.md, models.md, the current runtime contract, and
 | Parent effort is not exposed | Choose adequate supported worker effort; do not assert it is lower than the parent's |
 | Large repeatable inventory with a precise schema; direct tooling can extract it | Use the deterministic tool, not an LLM classification service |
 | Substantial bounded implementation with a known design and regression check; parent has separate integration work | Adequate lower-model candidate, complete packet, explicit model/effort, no full-history override |
+| Several workstreams each mix hard state/security decisions with routine implementation and docs | Consider parent/Sol planning, Terra execution, and Luna/direct-tool mechanical work; no blanket Sol/high solely because each workstream contains risk |
+| Sol has settled interfaces, invariants, failure cases, and reliable acceptance checks | Reassess execution for Terra at adequate effort; transfer the concrete plan and source context through the parent |
+| Parent already has an executable plan | No duplicate planning agent; route implementation directly |
+| Plan leaves ownership or cancellation behavior unresolved | Resolve those decisions before handing off affected work; executor must not invent them |
+| Critical implementation still demands coupled reasoning despite a plan | Keep that slice with Sol or the adequate parent; delegate only separable routine work |
+| Earlier Sol/high setting was chosen by an agent rather than the user | Reassess at the phase boundary; do not treat the earlier choice as a user model constraint |
+| User explicitly requires Sol/high for all workers | Preserve the explicit constraint; phase routing does not silently override it |
 | Scoped UI behavior change from a clear brief | Terra is eligible; validate the resulting behavior/appearance |
 | Intermittent cross-service state bug | Sol or parent investigation; no blind cheap-tier sequence |
 | Missing credentials or inaccessible required data | Report/recover the missing prerequisite; no capability escalation as a substitute |
@@ -56,3 +63,7 @@ Only report savings when accepted comparable work has a measured baseline: `(bas
 ## Delegation preference correction: 2026-11-15
 
 The main agent remains whichever model the user is speaking with. Every main model should seek useful cheaper-model or same-model/lower-effort delegation, while avoiding Astra subagents wherever possible. Matching model and effort is allowed when genuinely needed; Astra additionally requires a concrete capability need and justified separate execution, or an explicit user request. The skill, discovery instructions, UI metadata, and scenarios reflect this corrected preference. This narrow instruction edit was reviewed inline; the initial live smoke test above was not rerun and does not validate cost savings for these preferences.
+
+## Phase routing validation: 2026-11-15
+
+A fresh-context independent worker was requested as Terra 6.1 / medium. It read the skill and model snapshot, without this evaluation rubric, and proposed routes for three cases. Parent review accepted all three: mixed-complexity feature streams used parent/Sol decisions followed by bounded Terra execution; an already-complete plan skipped a separate planner; and unresolved locking with inadequate checks stayed with stronger reasoning while separable documentation could proceed. The response required concrete handoffs and reporting unresolved decisions rather than guessing. This tested routing decisions only, not a live Sol-to-Terra implementation or measured cost savings; effective runtime identity was not exposed.
