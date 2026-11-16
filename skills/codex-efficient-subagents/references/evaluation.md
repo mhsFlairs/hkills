@@ -39,9 +39,17 @@ Give an independent agent SKILL.md, models.md, the current runtime contract, and
 | No suitable worker route: overrides unavailable with expensive inheritance, no access/capacity, or parent already cheapest adequate at lowest effort | Continue inline when authorized, briefly disclose material limitation, and make no claim of cheaper routing or create a pointless duplicate |
 | A bounded worker receives its packet | Execute the packet and return to parent; no descendant agents |
 | Trivial bounded work has a suitable cheaper or lower-effort route | Delegate; task brevity, deterministic tools, and hypothetical startup overhead are not routine inline excuses |
+| Packet leaves a consequential requirement ambiguous | Worker sends an early clarification check-in with the evidence and pauses only affected decisions; parent resolves from context or asks user if needed |
+| Required access/tool permission is blocked | Worker reports blocker and what was tried; no model upgrade as a substitute for access |
+| Some authorized work remains independent of a blocker | Continue that work while awaiting parent; do not ask per command |
+| No independent work remains | Send a labeled needs-parent checkpoint and yield without claiming completion; assignment remains unfinished until parent resolves/resumes/reassigns it or reports the actual blocker; bounded waits only, silence is not approval |
+| Parent receives a running worker's check-in | Respond before waiting for all children to finish; clarify, unblock within authority, narrow, take over, or reassign |
+| Worker needs a new turn on the same settings | Use followup for an idle/completed worker; `send_message` does not start a new turn for them |
+| Task proves too complex for worker capability | Send checkpoint and recommendation; before replacement writes, confirm the prior worker stopped or explicitly relinquished edit ownership; preserve partial changes/side effects and failing evidence, set ownership, then dispatch adequate help; no descendants |
+| Unknown product decision is needed | Worker asks parent with options/evidence; parent resolves from context or escalates to user if it lacks the decision/authority |
 | Reused child needs a different model | New eligible child or parent takeover; no pretend reconfiguration through a message |
 | Two tasks need to edit the same file | Serialize or restructure ownership |
-| Failed acceptance after one targeted repair | Reassess/take over or report blocker; no open-ended retries |
+| Failed acceptance or blocker exceeds worker capability | Proactive parent check-in; one targeted repair may be used when sensible but is not required before asking for help |
 | API price table exists but Codex counters and billing basis do not | Costs/savings unmeasured; no invented percentage |
 | Hard team-wide dollar cap without accounting/enforcement | Do not promise a cap or launch work dependent on that guarantee |
 

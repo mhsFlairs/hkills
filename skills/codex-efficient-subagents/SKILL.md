@@ -86,8 +86,9 @@ Inputs: workspace, exact files/URLs, established facts and decisions; concrete p
 Scope: read-only or explicit edit ownership; applicable AGENTS.md/skills.
 Constraints: compatibility, permissions, existing user changes, dependencies.
 Acceptance: checks to run and observable pass conditions.
-Stop: report missing inputs or a capability gap; no unbounded retries.
-Return: result or changed paths, evidence/checks, uncertainties; concise summary.
+Manager: the actual parent task/agent target for mid-task check-ins; do not hardcode a root target.
+Stop: report material ambiguity, a blocked prerequisite/access, contradictory instructions, unexpected scope/complexity, or failing acceptance beyond your capability; no unbounded retries. Stop only affected decisions or mutations and continue independent authorized work.
+Return: result or changed paths, evidence/checks, uncertainties; concise summary. Send a check-in when escalation is needed. If no independent work remains, send a clearly labeled needs-parent checkpoint and yield without claiming completion.
 Do not spawn descendants. Do not edit outside your assigned scope.
 ```
 
@@ -97,11 +98,19 @@ Start with one worker unless independent work justifies more. Respect live capac
 
 If model overrides are unsupported, work inline or use supported inheritance with an explicit limitation. Inheriting Astra is still subject to the Astra exception above; it is not a routing workaround. Do not launch separate CLI/API processes or install custom-agent configuration just to force routing. A role name or prompt saying "be Luna" is not a model selector.
 
+## Worker and parent check-ins
+
+Workers should proactively contact their actual parent when material ambiguity, a blocked prerequisite/access, contradictory instructions, unexpected scope or complexity, or acceptance failure exceeds their assignment capability. On this runtime, workers use `collaboration.send_message` to contact the parent. They need not exhaust a retry budget first. Routine local decisions within a clear packet remain autonomous; do not ask for approval per command. For parent replies, use `send_message` for a running worker and `followup_task` to resume an idle/completed worker, because `send_message` does not start a new turn. Both preserve the worker's model and effort; changing either requires a new eligible dispatch with a fresh packet. If mid-task messaging is unavailable, return the same checkpoint through the result channel.
+
+Keep the check-in compact: task/outcome; need (clarification, unblock, or reassignment); specific question/blocker with evidence and what was tried; completed work, changed paths, checks and side effects; recommended next step/options; and independent work possible while waiting. Do not include credential values. Stop only affected decisions or mutations; continue independent authorized work. Do not guess consequential requirements, expand scope, repeat failed attempts, or spawn a replacement. If nothing independent remains, send a clearly labeled needs-parent checkpoint and yield/end the turn without claiming completion. A needs-parent checkpoint leaves the assignment unfinished; the parent must resolve it, resume or reassign the work, or report the actual blocker rather than treating the checkpoint as success. Any wait must be bounded; silence is not approval. Avoid endless polling or repeated messages.
+
+The parent monitors and responds to check-ins as they arrive, rather than waiting for all workers to finish. Resolve questions from existing context or inspect the needed evidence; answer the specific question, provide missing inputs or unblock within existing authorization, narrow or split the task with a concrete plan, take over, or reassign to an adequate worker. Escalate to the user only for a decision or authority the parent cannot resolve. Clarification alone does not require a model upgrade. Before a replacement writes, confirm the prior worker has stopped or explicitly relinquished edit ownership; inspect partial changes and completed side effects, transfer the checkpoint and failing evidence, establish file ownership, and avoid concurrent edits or replaying side effects.
+
 ## Verify and escalate
 
 Inspect the result against acceptance criteria; review edited behavior and relevant diffs. Run checks appropriate to the change, avoiding duplicate checks when reliable execution evidence already suffices. A child's success statement alone is not acceptance. Use independent review only when it can find material failures that existing checks miss.
 
-On failure, distinguish an environment/tool problem, an unclear contract, and inadequate reasoning. Repair missing prerequisites or narrow the packet first. Allow at most one targeted repair attempt for an unchanged subtask before the parent reassesses. For a capability failure, increase effort or move directly to an adequate model, carrying the failing evidence. Do not retry the same failed approach or repeatedly add reviewers. After an unsuccessful repair/escalation, take over or report the concrete blocker.
+On failure, distinguish an environment/tool problem, an unclear contract, and inadequate reasoning. Ask the parent to resolve a material blocker as soon as it is found; a retry is not a prerequisite. Repair missing prerequisites or narrow the packet first. Allow at most one targeted repair attempt for an unchanged subtask before reassessment, not as a mandatory step before asking for help. For a capability failure, the parent may increase effort or move directly to an adequate model, carrying the failing evidence and partial-work checkpoint. Do not retry the same failed approach or repeatedly add reviewers. Before reassignment, preserve work and side-effect state and prevent overlapping ownership. After an unsuccessful repair/escalation, the parent takes over or reports the concrete blocker.
 
 ## Account for the whole job
 
