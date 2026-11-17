@@ -44,7 +44,7 @@ Reassess model and effort at the planning-to-execution handoff. A Sol planner do
 
 ## Use Luna for bounded execution and evidence gathering
 
-Treat Luna as a capable tool-using worker that can own a complete bounded workflow. Prefer it for the following work when its supported model/effort is adequate and required tools are available:
+Treat Luna as a capable tool-using worker that can own a complete bounded workflow. Prefer it for the following work when its supported model/effort is adequate and required tools are available. If the live spawn tool omits Luna, prefer Terra at low effort when adequate or another supported lower-cost route.
 
 | Work | Luna assignment and handoff |
 | --- | --- |
@@ -67,8 +67,8 @@ The table below describes worker starting points; the main agent remains the cur
 | --- | --- | --- |
 | Routine Git, transcription workflows, PowerShell execution, search/evidence collection, extraction, or known-pattern changes with clear scope | Luna: low for straightforward execution, medium for multi-step work, high for concrete reasoning needs | Command results, repository state, transcript artifacts/uncertainties, cited evidence, or targeted checks |
 | Scoped implementation from a concrete plan or established patterns, documentation from supplied material, visual inspection with a defined outcome | Terra: low or medium | Behavior check, source fidelity, or inspected UI result |
-| Unresolved design decisions, unknown bug cause, interacting components, concurrency, subtle review, weak verification or costly rework | Sol: medium; high for competing hypotheses or coupled constraints; reassess execution after planning | Reproducer, targeted regression checks, justified findings |
-| A concrete capability need cannot be met by cheaper candidates, and separate execution is warranted instead of parent handling | Astra exception: lowest adequate supported effort; match the main effort only when required | Reason for the exception, explicit decision criteria, counterexamples, independent checks where useful |
+| Design, coding, review, or multistep workflows beyond a cheaper worker's capability | GPT-6.2 Sol at the lowest adequate effort. Start around medium for unresolved design or debugging and use high for competing hypotheses or coupled constraints. Reassess after planning. | Reproducer, targeted regression checks, justified findings |
+| Sustained cross-system reasoning, difficult implementation and verification, or template-sensitive deliverables when cheaper workers are inadequate and separate execution is warranted | GPT-6.2 Astra exception at the lowest adequate supported effort | Reason for the exception, explicit decision criteria, counterexamples, independent checks where useful |
 
 Choose by uncertainty, coupling, consequences, and verification quality, not task length, file count, or role name alone. A small security-critical change can need Sol; a large mechanical batch can fit Luna. If between routes, compare likely repair costs. Skip inadequate lower tiers; do not walk the entire ladder. Keep high-consequence integration with the parent or an adequate strong model.
 

@@ -1,6 +1,10 @@
 # Routing evidence and design choices
 
-Checked 2026-11-15. Sources below were opened and checked against the supplied research rather than accepted solely from search snippets.
+Updated 2026-11-17. Earlier benchmarks remain as historical evidence for the versions tested.
+
+## GPT-6.2 launch evidence
+
+OpenAI's launch report gives Sol 6.2 a FrontierCode 2.0 score within 0.5 points of Astra 6.2 at roughly one-fifth the measured cost, with both at max effort. On GDPval v2, Astra gained 6.2 points over its predecessor while generating 22% fewer output tokens, and Sol gained 5.3 points over its predecessor. Use these results to favor Sol when cheaper workers are inadequate and reserve Astra for a specific capability gap. Benchmark cost varies by workload and effort. Compare candidates against your own acceptance checks. [OpenAI launch report](https://openai.com/index/introducing-gpt-6-2-astra-sol/).
 
 ## Leaderboards
 
@@ -20,7 +24,7 @@ These are published index scores, not task success probabilities or values from 
 
 ### Search-SWE
 
-The [2026-11-13 leaderboard snapshot](https://search-swe.github.io/leaderboard/) evaluated all four models at max effort in Codex v0.164.0 on 47 tasks each:
+The [2026-11-13 leaderboard snapshot](https://search-swe.github.io/leaderboard/) evaluated these earlier versions at max effort in Codex v0.164.0 on 47 tasks each:
 
 | Model | Mean task score | Estimated cost for the entire evaluation |
 | --- | ---: | ---: |
